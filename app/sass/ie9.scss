@@ -1,0 +1,63 @@
+.loader,
+.preview-message-section:after,
+.preview-message-section .holder
+.preview-info:before,
+.feaures-section .bg-top,
+.feaures-section .bg-bottom,
+.steps-list li.active .item,
+.selectArea,
+.btn {filter: none;}
+.visual .loader {display: none;}
+.at-front-cover.visual .mask {
+	@media only screen and (min-width: 767px) {margin: 0 150px 0 -150px;}
+	@media only screen and (min-width: 960px) {
+		height: 446px;
+		margin: 0 253px 0 -253px;
+	}
+}
+.new-preview .at-front-cover.visual .mask {
+	@media only screen and (min-width: 960px) {
+		margin: 0 213px 0 -213px;
+		height: auto;
+	}
+}
+.new-preview .at-rear-cover.visual .mask {
+	@media only screen and (min-width: 960px) {
+		margin: 0 -213px 0 213px;
+		height: auto;
+	}
+}
+.visual .pager {
+	@media only screen and (min-width: 960px) {padding-top: 3px;}
+}
+.at-front-cover.visual .next.btn {
+	@media only screen and (min-width: 960px) {right: 276px;}
+}
+.new-preview .at-front-cover.visual .next.btn {
+	@media only screen and (min-width: 960px) {right: 286px;}
+}
+.new-preview .at-rear-cover.visual .prev.btn {
+	@media only screen and (min-width: 960px) {left: 286px;}
+}
+.default-blue .selectArea .center > span {
+	position: relative;
+	z-index: -1;
+}
+.default-blue .selectArea.selectAreaActive .center {
+	position: relative;
+	z-index: 1;
+}
+input.small[type="password"],
+input.small[type="text"] {
+	@media only screen and (min-width: 960px) {
+		line-height: 30px;
+	}
+}
+.promo-section {
+	background: image-url('backgrounds/bg-promo.jpg') no-repeat;
+	background-size: cover;
+	@media only screen and (min-width: 480px) {
+		background: image-url('backgrounds/bg-promo.jpg') no-repeat;
+		background-size: cover;
+	}
+}

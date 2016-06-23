@@ -1,0 +1,34 @@
+if !footerView
+  //footer starts
+  footer#footer
+    .frame
+      .container
+        ul.social-list
+          li: a(href="#"): i.icon-social-twitter
+          li: a(href="#"): i.icon-social-pinterest
+          li: a(href="#"): i.icon-social-facebook
+        nav.footer-nav
+          ul
+            li: a(href="frequently-asked-questions.html") FAQs
+            li: a(href="#") PRESS
+            li: a(href="#") NAMES
+            li: a(href="#") TERMS
+            li: a(href="#") PRIVACY
+            li: a(href="#") CONTACT US
+            li.currency-element
+              label(for="currency") CURRENCY
+              .select-holder.uppend
+                select(name="currency", id="currency", data-role="select")
+                  option(value="GBP", selected) GBP
+                  option(value="USD") USD
+                  option(value="EUR") EUR
+                  option(value="CAD") CAD
+                  option(value="AUD") AUD
+                  option(value="NZD") NZD
+                  option(value="HKD") HKD
+                  option(value="SGD") SGD
+                  option(value="KRW") KRW
+        p.copyright &copy; Copyright Wondrous Ink Ltd. 2015. All rights reserved. Registered in England. Company number: 8983267. <br /> Registered office: 60a Waldron Road, London SW18 3TD, UK. Contact: <a href="mailto:info@wondrousink.com">info@wondrousink.com</a>.
+  //footer ends
+else
+  .ill-footer

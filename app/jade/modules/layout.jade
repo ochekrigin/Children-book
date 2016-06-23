@@ -1,0 +1,31 @@
+include ../dev/common
+doctype html
+= "\n\r"
+<html lang="en">
+head
+  meta(charset="utf-8")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
+  meta(name="format-detection", content="telephone=no")
+  block title
+  title #{title}
+  block fonts
+  // build:remove 
+  block bowerStyles
+    link(rel="stylesheet", href="../bower_components/fancybox/source/jquery.fancybox.css")
+    link(rel="stylesheet", href="../bower_components/jquery-ui/themes/blitzer/jquery-ui.min.css")
+  // /build 
+  +replaceTpl('markup')
+    block markupStyles
+      link(rel="stylesheet", href="css/fancybox/jquery.fancybox.css")
+  // build:css:build css/wondrous-ink.min.css 
+  block styles
+    link(rel="stylesheet", href="css/all.css")
+  // /build 
+  = "\n\r  "
+  +ie('if IE 9')
+    link(rel="stylesheet", href="css/ie9.css")
+  // build:remove 
+  // /build 
+  +ieTpl
+block body
+!= "\n\r</html>"

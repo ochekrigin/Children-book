@@ -1,0 +1,222 @@
+//visual starts
+if !newPreview
+    section.visual.at-front-cover(data-book-gallery)
+      .container
+        h1 The Wondrous world of
+        .holder
+          a.btn.large.disabled.prev(href="#")
+            span
+              i.icon-arrow-left
+          .info-box.left
+            span.hidden.m-visible Tap book pages to preview
+            span.m-hidden Swipe pages to preview
+          .mask
+            .slideset.bookblock.deploy
+              .bookblock-deploy(data-character="smart")
+                img.cover(src="images/book/cover.jpg", data-lg-src="images/book/cover.jpg", data-sm-src="images/book/cover-small.jpg", alt="img-description", width="509", height="448")
+              .bookblock-deploy(data-character="smart")
+                img(src="images/book/img-book-1.jpg", data-lg-src="images/book/img-book-1.jpg", data-sm-src="images/book/img-book-small-1.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="smart")
+                img(src="images/book/img-book-2.jpg", data-lg-src="images/book/img-book-2.jpg", data-sm-src="images/book/img-book-small-2.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="smart")
+                img(src="images/book/img-book-1.jpg", data-lg-src="images/book/img-book-1.jpg", data-sm-src="images/book/img-book-small-1.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="smart")
+                img(src="images/book/img-book-2.jpg", data-lg-src="images/book/img-book-2.jpg", data-sm-src="images/book/img-book-small-2.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="amazing")
+                img(src="images/book/img-book-1.jpg", data-lg-src="images/book/img-book-1.jpg", data-sm-src="images/book/img-book-small-1.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="lively")
+                img(src="images/book/img-book-2.jpg", data-lg-src="images/book/img-book-2.jpg", data-sm-src="images/book/img-book-small-2.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="lovely")
+                img(src="images/book/img-book-1.jpg", data-lg-src="images/book/img-book-1.jpg", data-sm-src="images/book/img-book-small-1.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="youthful")
+                img(src="images/book/img-book-2.jpg", data-lg-src="images/book/img-book-2.jpg", data-sm-src="images/book/img-book-small-2.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="special")
+                img(src="images/book/img-book-1.jpg", data-lg-src="images/book/img-book-1.jpg", data-sm-src="images/book/img-book-small-1.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="magnificient")
+                img(src="images/book/img-book-2.jpg", data-lg-src="images/book/img-book-2.jpg", data-sm-src="images/book/img-book-small-2.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="intelligent")
+                img(src="images/book/img-book-1.jpg", data-lg-src="images/book/img-book-1.jpg", data-sm-src="images/book/img-book-small-1.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="terrific")
+                img(src="images/book/img-book-2.jpg", data-lg-src="images/book/img-book-2.jpg", data-sm-src="images/book/img-book-small-2.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="helpful")
+                img(src="images/book/img-book-1.jpg", data-lg-src="images/book/img-book-1.jpg", data-sm-src="images/book/img-book-small-1.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="helpful")
+                img.cover-last(src="images/book/rear-cover.jpg", data-lg-src="images/book/rear-cover.jpg", data-sm-src="images/book/rear-cover-small.jpg", alt="img-description", width="1280", height="462")
+          a.btn.large.next(href="#")
+            span
+              i.icon-arrow-right
+        .pager
+          .info-box.right Or click letters of name to preview related sections
+          ul.list
+            li.active(data-selected-character="smart")
+              span.item-table
+                span.item-cell
+                  button.element
+                    span.letter s
+            li(data-selected-character="amazing")
+              span.item-table
+                span.item-cell
+                  button.element
+                    span.letter a
+            li(data-selected-character="lively")
+              span.item-table
+                span.item-cell
+                  button.element
+                    span.letter l
+            li(data-selected-character="lovely")
+              span.item-table
+                span.item-cell
+                  button.element
+                    span.letter l
+            li(data-selected-character="youthful")
+              span.item-table
+                span.item-cell
+                  button.element
+                    span.letter y
+          ul.list
+            li(data-selected-character="special")
+              span.item-table
+                span.item-cell
+                  button.element
+                    span.letter s
+            li(data-selected-character="magnificient")
+              span.item-table
+                span.item-cell
+                  button.element
+                    span.letter m
+            li(data-selected-character="intelligent")
+              span.item-table
+                span.item-cell
+                  button.element
+                    span.letter i
+            li(data-selected-character="terrific")
+              span.item-table
+                span.item-cell
+                  button.element
+                    span.letter t
+            li(data-selected-character="helpful")
+              span.item-table
+                span.item-cell
+                  button.element
+                    span.letter h
+    //visual ends
+    if !ui
+      .loader(style="display:none;")
+        .container
+          strong.entry.hidden.m-visible Creating personalised book...
+          .frame
+            .placeholder.hidden.m-visible
+              img.lazy(src="images/content/loader-transparent.gif", alt="placeholder", width="1083", height="246")
+              //- img.img-loader(src="images/content/loader.png", alt="placeholder", width="1083", height="246")
+            ul.list
+              li.step-1
+                .ill-holder.m-hidden
+                strong.title Adding letters of child's name
+              li.step-2
+                .ill-holder.m-hidden
+                strong.title Adding magically illustrated characters
+              li.step-3
+                .ill-holder.m-hidden
+                strong.title Creating personalised pages &amp; ending
+            .progress-bar.m-hidden
+  else
+    section.visual.at-front-cover(data-book-gallery)
+      .container
+        h1 Preview John’s book
+        .holder
+          a.btn.disabled.prev(href="#")
+            span
+              i.icon-arrow-left
+          .info-box.left
+            span.hidden.m-visible Tap book pages to preview
+            span.m-hidden Swipe pages to preview
+          .mask
+            .slideset.bookblock.deploy
+              .bookblock-deploy(data-character="smart")
+                img.lazy.cover(data-original="images/book/cover.jpg",src="images/none.gif", data-lg-src="images/book/cover.jpg", data-sm-src="images/book/cover-small.jpg", alt="img-description", width="1280", height="462")
+              .bookblock-deploy(data-character="smart")
+                img.lazy(data-original="images/book/img-book-1.jpg", src="images/none.gif", data-lg-src="images/book/img-book-1.jpg", data-sm-src="images/book/img-book-small-1.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="smart")
+                img.lazy(data-original="images/book/img-book-2.jpg", src="images/none.gif", data-lg-src="images/book/img-book-2.jpg", data-sm-src="images/book/img-book-small-2.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="smart")
+                img.lazy(data-original="images/book/img-book-1.jpg", src="images/none.gif", data-lg-src="images/book/img-book-1.jpg", data-sm-src="images/book/img-book-small-1.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="smart")
+                img.lazy(data-original="images/book/img-book-2.jpg", src="images/none.gif", data-lg-src="images/book/img-book-2.jpg", data-sm-src="images/book/img-book-small-2.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="amazing")
+                img.lazy(data-original="images/book/img-book-1.jpg", src="images/none.gif", data-lg-src="images/book/img-book-1.jpg", data-sm-src="images/book/img-book-small-1.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="lively")
+                img.lazy(data-original="images/book/img-book-2.jpg", src="images/none.gif", data-lg-src="images/book/img-book-2.jpg", data-sm-src="images/book/img-book-small-2.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="lovely")
+                img.lazy(data-original="images/book/img-book-1.jpg", src="images/none.gif", data-lg-src="images/book/img-book-1.jpg", data-sm-src="images/book/img-book-small-1.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="youthful")
+                img.lazy(data-original="images/book/img-book-2.jpg", src="images/none.gif", data-lg-src="images/book/img-book-2.jpg", data-sm-src="images/book/img-book-small-2.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="special")
+                img.lazy(data-original="images/book/img-book-1.jpg", src="images/none.gif", data-lg-src="images/book/img-book-1.jpg", data-sm-src="images/book/img-book-small-1.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="magnificient")
+                img.lazy(data-original="images/book/img-book-2.jpg", src="images/none.gif", data-lg-src="images/book/img-book-2.jpg", data-sm-src="images/book/img-book-small-2.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="intelligent")
+                img.lazy(data-original="images/book/img-book-1.jpg", src="images/none.gif", data-lg-src="images/book/img-book-1.jpg", data-sm-src="images/book/img-book-small-1.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="terrific")
+                img.lazy(data-original="images/book/img-book-2.jpg", src="images/none.gif", data-lg-src="images/book/img-book-2.jpg", data-sm-src="images/book/img-book-small-2.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="helpful")
+                img.lazy(data-original="images/book/img-book-1.jpg", src="images/none.gif", data-lg-src="images/book/img-book-1.jpg", data-sm-src="images/book/img-book-small-1.jpg", alt="img-description", width="1013", height="448")
+              .bookblock-deploy(data-character="helpful")
+                img.lazy.cover-last(data-original="images/book/rear-cover.jpg", src="images/none.gif", data-lg-src="images/book/rear-cover.jpg", data-sm-src="images/book/rear-cover-small.jpg", alt="img-description", width="1280", height="462")
+          a.btn.next(href="#")
+            span
+              i.icon-arrow-right
+      form.common-form(action="#", novalidate, data-role="preview-book" id="preview_form")
+        label(for="name") Buy now to receive in time for Christmas...
+        .btn-holder
+          button.btn.align-right(type="submit", data-role="submit-name", data-letters-limit-max=12, data-letters-limit-min=3)
+            span Buy for £19.99
+        .frame-box
+          a(href="#lightbox").open-fancybox Save on multiple books
+        //- .frame
+        //-   .row
+        //-     input(type="text", id="name", data-role="name").small
+        //-   .row
+        //-     .col
+        //-       ul.radio-list.small-size
+        //-         li
+        //-           input(type="radio", id="boy", name="gender-1", data-role="boy")
+        //-           label.radio-label(for="boy") Boy
+        //-         li
+        //-           input(type="radio", id="girl", name="gender-1", data-role="girl")
+        //-           label.radio-label(for="girl") Girl
+        //-     .col
+              
+        //-   .row.hidden
+        //-     span.hidden.text-center(data-error="type-1") Please enter the child's first name only (it should be a minimum of 3 characters and a maximum of 12 characters).
+        //-     span.hidden.text-center(data-error="type-2") Please click on either Boy or Girl.
+        //-     span.hidden.text-center(data-error="type-3") Oops, we can't make a book for this name yet as we don't have enough stories for the repeat letters in your child's name.<br>Please try again using just their first name or a shorter version of their name.
+        //- .frame-box
+        //-     .col-1
+        //-       | Not ready to buy yet? - <a href="#event-lightbox" class="open-fancybox">Save for later</a>
+        //-     .col-2
+        //-       a(href="#lightbox").open-fancybox Save on multiple books
+      .description.text-center
+        | A magical uplifting story unique to each child, built around each letter of their name becoming the hero of the adventure. Watch their face as they realises that the book is all about them!
+        .btn-holder
+          a.btn.blue(href="https://www.youtube.com/embed/6_EB-IkhX-Y").fancybox-media
+            span See how it works on our video
+            i.ico.arrow
+    if !ui
+      .loader(style="display:none;")
+        .container
+          strong.entry.hidden.m-visible Creating personalised book...
+          .frame
+            .placeholder.hidden.m-visible
+              img(src="images/content/loader-transparent.gif", alt="placeholder", width="1083", height="246")
+              img.img-loader(src="images/content/loader.png", alt="placeholder", width="1083", height="246")
+            ul.list
+              li.step-1
+                .ill-holder.m-hidden
+                strong.title Adding letters of child’s name
+              li.step-2
+                .ill-holder.m-hidden
+                strong.title Adding magically illustrated characters
+              li.step-3
+                .ill-holder.m-hidden
+                strong.title Creating personalised pages &amp; ending
+            .progress-bar.m-hidden

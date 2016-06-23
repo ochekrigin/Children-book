@@ -1,0 +1,56 @@
+ul.steps-list
+  li.step-1&attributes(step1 ? {'class':'active'} : {})
+    if step1
+      span.item
+        span.box
+          span.item-table
+            span.item-cell
+              i.icon-user
+              i.icon-user-blue
+              span.text Details
+    else
+      .item
+        span.box
+          span.item-table
+            span.item-cell
+              i.icon-user
+              i.icon-user-blue
+              span.text Details
+  li.step-2&attributes(step2 ? {'class':'active'} : {})
+    if step2
+      span.item
+        span.box
+          span.item-table
+            span.item-cell
+              i.icon-envelope
+              i.icon-envelope-blue
+              span.text Delivery address
+          i.ill
+    else
+      .item
+        span.box
+          span.item-table
+            span.item-cell
+              i.icon-envelope
+              i.icon-envelope-blue
+              span.text Delivery address
+          i.ill
+  li.step-3&attributes(step3 ? {'class':'active'} : {})
+    if step3
+      span.item
+        span.box
+          span.item-table
+            span.item-cell
+              i.icon-credit-card
+              i.icon-credit-card-blue
+              span.text Payment
+          i.ill
+    else
+      .item
+        span.box
+          span.item-table
+            span.item-cell
+              i.icon-credit-card
+              i.icon-credit-card-blue
+              span.text Payment
+          i.ill

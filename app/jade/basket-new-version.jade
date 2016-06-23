@@ -1,0 +1,235 @@
+extends modules/layout
+block title
+  - title = 'Basket';
+  - footerView = true;
+block body
+  body.basket-page
+    //wrapper starts
+    #wrapper
+      include modules/header
+      //main starts
+      #main
+        //basket section starts
+        section.basket-section
+          .container
+            .holder
+              form.basket-form(action="#", novalidate, data-form)
+                input(type="hidden" value="nXDHsESHFHNpZ83uUwdITifEIMmPJEqi" name="csrfmiddlewaretoken")
+                header.heading
+                  h1
+                    i.icon-basket-blue
+                    | Your basket
+                  .form-control
+                    label(for="currency-2") Change currency:
+                    .select-holder
+                      select(name="currency", id="currency-2", data-role="select", data-placeholder="British pounds")
+                        option(value="GBP") GBP
+                        option(value="USD") USD
+                        option(value="EUR") EUR
+                        option(value="CAD") CAD
+                        option(value="AUD") AUD
+                        option(value="NZD") NZD
+                        option(value="HKD") HKD
+                        option(value="SGD") SGD
+                        option(value="KRW") KRW
+                .block
+                  figure.product-item(data-unique-id="1")
+                    .img-holder(data-gender="girl")
+                      img.lazy.girl-image(data-original="images/content/img-preview.jpg", src="images/none.gif", alt="img-description", width="160", height="141")
+                      img.lazy.boy-image(data-original="images/content/img-preview-2.jpg", src="images/none.gif", alt="img-description", width="160", height="141")
+                    figcaption
+                      .info-options
+                        h2(data-user-name) Samantha Smith
+                        h3(data-title-gender)
+                          span(data-text) Girl
+                          span(data-gift-item) Gift wrap
+                        span.message-update.hidden Message updated
+                      .box
+                        ul.option-list
+                          li: a(href="#edit" data-edit-popup data-request-url="inc/data.json").open-fancybox Edit book
+                          //- li: a(href="#") View message
+                          li: a(href="#" data-remove) Remove
+                          li: a(href="#" data-fancybox-href="inc/preview-lightbox.html" data-preview class="fancybox.ajax" data-fancybox-type="ajax").open-ajax-fancybox Preview book
+                        strong.price £21.98
+                  textarea.hidden(data-type="hidden") Hello Sally, welcome to your very own wondrous ink adventure. inside these pages you'll discover an enchanting world of magical fun that's all about you. while you are reading your book, be sure to look out for your secret key to help you continue your adventure online.
+                .block
+                  figure.product-item(data-unique-id="2")
+                    .img-holder(data-gender="boy")
+                      img.lazy.boy-image(data-original="images/content/img-preview-2.jpg", src="images/none.gif", alt="img-description", width="160", height="141")
+                      img.lazy.girl-image(data-original="images/content/img-preview.jpg", src="images/none.gif", alt="img-description", width="160", height="141")
+                    figcaption
+                      .info-options
+                        h2(data-user-name) Alex
+                        h3(data-title-gender)
+                          span(data-text) Boy
+                          span(data-gift-item).hidden
+                        span.message-update.hidden Message updated
+                      .box
+                        ul.option-list
+                          li: a(href="#edit" data-edit-popup data-request-url="inc/data.json").open-fancybox Edit book
+                          //- li: a(href="#") View message
+                          li: a(href="#" data-remove) Remove
+                          li: a(href="#" data-fancybox-href="inc/preview-lightbox.html" data-preview class="fancybox.ajax" data-fancybox-type="ajax").open-ajax-fancybox Preview book
+                        strong.price
+                          span.old-price £19.99
+                          span.new-price £17.99
+                  textarea.hidden(data-type="hidden") Hello Sally, welcome to your very own wondrous ink adventure.
+                .block
+                  .promo-box
+                    span.ill-holder.hidden.l-visible
+                      i.ill-truck
+                    h2 FREE DELIVERY <span class="text-blue">- TODAY ONLY!</span>
+                    p Use the promo code <strong>WINK123</strong> below 
+                .block
+                  .add-book
+                    .img-holder
+                      .mobile-mode
+                        img.lazy(data-original="images/content/img-add-book-mobile.png", src="images/none.gif", alt="img-description", width="203", height="113")
+                      .desktop-mode
+                        img.lazy(data-original="images/content/img-add-book.png", src="images/none.gif", alt="img-description", width="184", height="174")
+                    .box
+                      .frame
+                        .col-1.text-center
+                          .info
+                            | Add another book for
+                            strong £15.99 <span>(20% off)</span>.
+                        .col-2
+                          a.btn(href="#add-book").open-fancybox
+                            span Add another book
+                          em.note Have friends with a baby on the way, or would like a book for another grandchild?
+                .block
+                  .col-1
+                    .form-control
+                      label(for="delivery_country") Country for delivery:
+                      .select-holder.has-scroll
+                        include modules/delivery_country
+                    .form-control
+                      a(href="#" data-show).blue.big-text Have a promocode?
+                      .slide
+                        label(for="promo") Have a promo code?:
+                        .input-box
+                          input(type="text", id="promo")
+                          a.btn.blue(href="#")
+                            span Apply
+                  .col-2
+                    ul.price-list
+                      li
+                        span.title Subtotal:
+                        strong.price £19.99
+                      li
+                        span.title Delivery:
+                        strong.price £3.99
+                      li
+                        span.title Discount:
+                        strong.price £00.00
+                      li.total.l-hidden
+                        span.title Order total:
+                        strong.price £23.99
+                  .delivery-info.m-hidden
+                    p Expected date of delivery: Sunday April 26, 2015
+                      span Fast tracked shipping available during checkout
+                    ul.payment-list
+                      li: i.icon-visa
+                      li: i.icon-visa-electron
+                      li: i.icon-mastercard
+                      li: i.icon-maestro
+                      li: i.icon-paypal-card
+                .block.hidden.l-visible
+                  .col-1
+                    .delivery-info
+                      p Expected date of delivery: Sunday April 26, 2015
+                        span Fast tracked shipping available during checkout
+                      ul.payment-list
+                        li: i.icon-visa
+                        li: i.icon-visa-electron
+                        li: i.icon-mastercard
+                        li: i.icon-maestro
+                        li: i.icon-paypal-card
+                  .col-2
+                    ul.price-list
+                      li.total
+                        span.title Order total:
+                        strong.price £23.99
+                ul.action-list
+                  li
+                    a.btn(href="#")
+                      span Continue to checkout
+                  li
+                    span.or or
+                  li
+                    a.btn.blue(href="#")
+                      span Save for later
+                    em.note Set a reminder, for an upcoming date such as a child, grandchild or nephew's birthday.
+              span.ill-shadow
+        //basket section ends
+      //main ends
+      include modules/footer
+      span.ill-body
+        img.lazy(data-original="images/backgrounds/bg-body.jpg", src="images/none.gif", alt="img-description", width="1440", height="863")
+    include modules/lightbox
+    //wrapper ends
+    script(type='text/javascript').
+      WebFontConfig = {
+        google: { families: [ 'Cardo:400,700:latin', 'Lato:400,300,700:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    //jQuery library
+    // build:js js/jquery.min.js
+    script(src="../bower_components/jquery/dist/jquery.min.js")
+    // /build 
+    // build:remove 
+    block bowerScripts
+      //modernizr plugin
+      script(src="../bower_components/modernizr/modernizr.js")
+      //detectizr plugin
+      script(src="../bower_components/detectizr/dist/detectizr.js")
+      //autogrow plugin
+      script(src="../bower_components/autosize/dist/autosize.min.js")
+      //fastclick plugin
+      script(src="../bower_components/fastclick/lib/fastclick.js")
+      //placeholder plugin
+      script(src="../bower_components/jquery-placeholder/jquery.placeholder.js")
+      //retina plugin
+      script(src="../bower_components/retina.js/dist/retina.min.js")
+      //fancybox plugin
+      script(src="../bower_components/fancybox/source/jquery.fancybox.js")
+      //imagesLoaded plugin
+      script(src="../bower_components/imagesLoaded/imagesLoaded.pkgd.min.js")
+      //jquery lazyload plugin
+      script(src="../bower_components/jquery_lazyload/jquery.lazyload.js")
+    // /build 
+    +replaceTpl('markup')
+      block markupScripts
+        script(src="js/plugins/modernizr.min.js")
+        script(src="js/plugins/detectizr.min.js")
+        script(src="js/plugins/fastclick.min.js")
+        script(src="js/plugins/jquery.placeholder.min.js")
+        script(src="js/plugins/jquery.fancybox.pack.min.js")
+        script(src="js/plugins/retina.min.js")
+        script(src="js/plugins/imagesLoaded.pkgd.min.js")
+        script(src="js/plugins/jquery.lazyload.js")
+    // build:remove:build 
+    //include plugins
+    block pluginsScripts
+      script(src="js/jquery.form-validator.js")
+      script(src="js/jquery.show-error.js")
+      script(src="js/jquery.ajax-setup.js")
+      script(src="js/jquery.buy.js")
+      script(src="js/experiments.js")
+    //init plugins
+    block initScripts
+      script(src="js/jquery.utilities.js")
+      script(src="js/jquery.common.js")
+      script(src="js/jquery.init-book-gallery.js")
+      script(src="js/jquery.data-edit.js")
+    // /build 
+    +replaceTpl('build')
+      script(src="js/wondrous-ink.min.js")
+    = "\n\r  "

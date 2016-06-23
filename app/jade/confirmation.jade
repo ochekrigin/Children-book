@@ -1,0 +1,109 @@
+extends modules/layout
+block title
+  - title = 'Confirmation';
+block body
+  body.home.white-scheme
+    //wrapper starts
+    #wrapper.with-cover.blue
+      include modules/header
+      //main starts
+      #main
+        //promo section starts
+        section.promo-section.type-hero-3
+          .container
+            h1.entry.hidden.l-visible.red Thank you!
+        //promo section ends
+        //features section start
+        section.features-section.white.text-box.top-indent
+          .holder
+            .container
+              h2.text-left Your order
+              .order-info
+                p
+                  strong Order reference number is <span>100-2416</span>
+                p Placed on Monday August 24 2015
+                p Expected delivery Monday September 07 2015
+                table
+                  thead
+                    tr
+                      th.text-left Item
+                      th.text-right Price
+                  tbody
+                    tr
+                      td.text-left Mickey (boy)
+                      td.text-right.price £19.99
+                    tr
+                      td.text-left Delivery
+                      td.text-right.price £3.99
+                  tfoot
+                    tr
+                      td.text-left Total
+                      td.text-right.price £23.98
+                h3.text-left HELP SPREAD THE WORD - AND GET PAID IN RETURN
+                p.small-text We’ve emailed you a unique link that you can share with your friends and family.
+                p.small-text For every person you refer, who then buys a book, you will receive $5 (USD). We will also give them 15% off their first order. It’s a win-win situation!
+                .btn-holder
+                  a.btn.full-width(href="#")
+                    span Create a new book
+        //features section end
+      //main ends
+      include modules/footer
+    //wrapper ends
+    script(type='text/javascript').
+      WebFontConfig = {
+        google: { families: [ 'Cardo:400,700:latin', 'Lato:400,300,700:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    //jQuery library
+    // build:js js/jquery.min.js
+    script(src="../bower_components/jquery/dist/jquery.min.js")
+    // /build 
+    // build:remove 
+    block bowerScripts
+      //modernizr plugin
+      script(src="../bower_components/modernizr/modernizr.js")
+      //detectizr plugin
+      script(src="../bower_components/detectizr/dist/detectizr.js")
+      //fastclick plugin
+      script(src="../bower_components/fastclick/lib/fastclick.js")
+      //placeholder plugin
+      script(src="../bower_components/jquery-placeholder/jquery.placeholder.js")
+      //retina plugin
+      script(src="../bower_components/retina.js/dist/retina.min.js")
+      //imagesLoaded plugin
+      script(src="../bower_components/imagesLoaded/imagesLoaded.pkgd.min.js")
+      //jquery lazyload plugin
+      script(src="../bower_components/jquery_lazyload/jquery.lazyload.js")
+    // /build 
+    +replaceTpl('markup')
+      block markupScripts
+        script(src="js/plugins/modernizr.min.js")
+        script(src="js/plugins/detectizr.min.js")
+        script(src="js/plugins/fastclick.min.js")
+        script(src="js/plugins/jquery.placeholder.min.js")
+        script(src="js/plugins/retina.min.js")
+        script(src="js/plugins/imagesLoaded.pkgd.min.js")
+        script(src="js/plugins/jquery.lazyload.js")
+    // build:remove:build 
+    //include plugins
+    block pluginsScripts 
+      script(src="js/jquery.form-validator.js")
+      script(src="js/jquery.show-error.js")
+      script(src="js/jquery.ajax-setup.js")
+      script(src="js/jquery.buy.js")
+      script(src="js/experiments.js")
+    //init plugins
+    block initScripts
+      script(src="js/jquery.utilities.js")
+      script(src="js/jquery.common.js")
+    // /build 
+    +replaceTpl('build')
+      script(src="js/wondrous-ink.min.js")
+    = "\n\r  "

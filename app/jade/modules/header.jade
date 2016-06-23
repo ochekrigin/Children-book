@@ -1,0 +1,42 @@
+//header starts
+header#header
+  .container
+    .holder
+      strong.logo
+        a(href="index.html") Wondrous INK
+      if aboutUs
+        +navmenu([
+          {'title': 'About us', 'link': 'about-us.html', 'class': 'active'},
+          {'title': 'Discounts', 'link': 'group-discounts.html'},
+          {'title': 'Blog', 'link': '#'},
+          {'title': 'Login', 'link': 'log-in-to-my-world.html'},
+          {'title': 'Basket', 'link': 'basket.html', 'class': 'hidden m-visible', 'iconClass': 'icon-basket'}
+        ])
+      else if discount
+        +navmenu([
+          {'title': 'About us', 'link': 'about-us.html'},
+          {'title': 'Discounts', 'link': 'group-discounts.html', 'class': 'active'},
+          {'title': 'Blog', 'link': '#'},
+          {'title': 'Login', 'link': 'log-in-to-my-world.html'},
+          {'title': 'Basket', 'link': 'basket.html', 'class': 'hidden m-visible', 'iconClass': 'icon-basket'}
+        ])
+      else if login
+        +navmenu([
+          {'title': 'About us', 'link': 'about-us.html'},
+          {'title': 'Discounts', 'link': 'group-discounts.html'},
+          {'title': 'Blog', 'link': '#'},
+          {'title': 'Login', 'link': 'log-in-to-my-world.html', 'class': 'active'},
+          {'title': 'Basket', 'link': 'basket.html', 'class': 'hidden m-visible', 'iconClass': 'icon-basket'}
+        ])
+      else
+        +navmenu([
+          {'title': 'About us', 'link': 'about-us.html'},
+          {'title': 'Discounts', 'link': 'group-discounts.html'},
+          {'title': 'Blog', 'link': '#'},
+          {'title': 'Login', 'link': 'log-in-to-my-world.html'},
+          {'title': 'Basket', 'link': 'basket.html', 'class': 'hidden m-visible', 'iconClass': 'icon-basket'}
+        ])
+      a.basket.m-hidden(href="basket.html")
+        em.count 2
+        i.icon-basket-small
+//header ends

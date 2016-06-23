@@ -1,0 +1,299 @@
+extends modules/layout
+block title
+  - title = "UI";
+  - ui = true;
+block body
+  body
+    //wrapper starts
+    #wrapper
+      //header starts
+      include modules/header
+      //header ends
+      //main starts
+      #main
+        .container
+          .example-box
+            h2.ui-title Headings
+            h1 Heading 1
+            h2 Heading 2
+            h3 Heading 3
+            h4 Heading 4
+            h5 Heading 5
+            h6 Heading 6
+          .example-box
+            h2.ui-title Buttons
+            button(type="submit").btn
+              span Primary Button
+            button(type="submit").btn.blue
+              span Secondary Button
+            .row
+              button(type="submit").btn.full-width
+                span Full width Button
+          .example-box
+            h2.ui-title Label
+            label Sign up for email updates
+          .example-box
+            h2.ui-title Input
+            input(id="labelForValue" type="text" placeholder="Example input")
+          .example-box
+            h2.ui-title Checkbox
+            input(type="checkbox", id="checkbox")
+            label.checkbox-label.alt(for="checkbox") Label for checkbox
+          .example-box
+            h2.ui-title Social list
+            ul.social-list
+              li: a(href="#"): i.icon-social-twitter
+              li: a(href="#"): i.icon-social-pinterest
+              li: a(href="#"): i.icon-social-facebook
+        .example-box
+          .container
+            h2.ui-title Visual book
+          include modules/visual
+        .example-box
+          .container
+            h2.ui-title Product item
+            figure.product-item
+              .img-holder
+                img.lazy(data-original="images/content/img-preview.jpg", src="images/none.gif", alt="img-description", width="159", height="140")
+              figcaption
+                h2 The wondrous world of <span class="name">Sally Smith</span>
+                .box
+                  ul.option-list
+                    li: a(href="#") Edit
+                    li: a(href="#") Remove
+                  strong.price £19.99
+        .example-box
+          .container
+            h2.ui-title Pattern box
+          .pattern-box
+            .container
+              p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem voluptas quasi aliquid libero nam aspernatur dolores ipsam praesentium debitis deleniti ad veritatis tempore voluptates optio repudiandae, sunt atque doloremque ipsa.
+        .container
+          .example-box
+              h2.ui-title Preview form
+              form.common-form.text-center(action="#", novalidate, data-role="preview-book")
+                label(for="name") Enter child’s first name:
+                .frame
+                  .row
+                    input(type="text", id="name", data-role="name")
+                  .row
+                    .col
+                      ul.radio-list
+                        li
+                          input(type="radio", id="boy", name="gender-1", data-role="boy")
+                          label.radio-label(for="boy") Boy
+                        li
+                          input(type="radio", id="girl", name="gender-1", data-role="girl")
+                          label.radio-label(for="girl") Girl
+                    .col
+                      button.btn.align-right(type="submit", data-role="submit-name", data-letters-limit-max=12, data-letters-limit-min=3)
+                        span Preview book
+                  .row
+                    span.hidden(data-error="type-1") Please enter the child's first name only (it should be a minimum of 3 characters and a maximum of 12 characters).
+                    span.hidden(data-error="type-2") Please click on either Boy or Girl.
+                    span.hidden(data-error="type-3") Oops, we can't make a book for this name yet as we don't have enough stories for the repeat letters in your child's name.<br>Please try again using just their first name or a shorter version of their name.
+          .example-box
+              h2.ui-title Checkout form
+              form.checkout-form(action="#", novalidate)
+                .block
+                  .row
+                    .col
+                      h2 Where would you like to send your books?
+                      .order-box(data-add-class-parent)
+                        .img-holder
+                          img.lazy(data-original="images/content/img-preview.jpg", src="images/none.gif", alt="img-description", width="159", height="140")
+                        .wrap
+                          h3
+                            span.count 1
+                            | x Wondrous books
+                          strong.total Order total <span class="price">£23.99</span>
+                          a.view-all(href="#", data-add-class)
+                            span.show View all order details
+                            span.hide Hide details
+                        .dropdown
+                          ul.price-list
+                            li
+                              span.title Subtotal:
+                              strong.price £19.99
+                            li
+                              span.title Delivery:
+                              strong.price £03.99
+                            li
+                              span.title Discount:
+                              strong.price £00.00
+                            li.total
+                              span.title Order total:
+                              strong.price £23.99
+                    .col
+                      .form-control
+                        label(for="first-name") First name:
+                        input(type="text", id="first-name")
+                        span.message-error Please specify first name
+                      .form-control
+                        label(for="last-name") Last name:
+                        input(type="text", id="last-name")
+                        span.message-error Please specify last name
+                      .form-control
+                        label(for="address-1") Address:
+                        .form-control
+                          input(type="text", id="address-1", placeholder="Address line 1")
+                          span.message-error Please specify address line 1
+                        .form-control
+                          input(type="text", id="address-2", placeholder="Address line 2 (optional)")
+                          span.message-error Please specify address line 2
+                        .form-control
+                          input(type="text", id="city", placeholder="Town / City")
+                          span.message-error Please specify Town / City
+                        .form-control
+                          input(type="text", id="code", placeholder="Postcode / Zip code")
+                          span.message-error Please specify Postcode / Zip code
+                        .select-holder.input-style.has-scroll
+                          include modules/delivery_country
+                .block
+                  .row
+                    .col
+                      h2 Your billing address
+                    .col
+                      .note
+                        input(type="checkbox", id="delivery")
+                        label.checkbox-label.alt(for="delivery") Use the delivery address above
+                      .btn-holder
+                        button.btn(type="submit")
+                          span Pay by card
+                        a.btn-paypal(href="#") Check out with PayPal
+          .example-box
+              h2.ui-title Custom Select
+              h3 Default style
+              .form-control
+                .select-holder
+                  select(name="currency", data-role="select", data-placeholder="British pounds")
+                    option(value="GBP") GBP
+                    option(value="USD") USD
+                    option(value="EUR") EUR
+                    option(value="CAD") CAD
+                    option(value="AUD") AUD
+                    option(value="NZD") NZD
+                    option(value="HKD") HKD
+                    option(value="SGD") SGD
+                    option(value="KRW") KRW
+              h3 Blue style
+              .form-control
+                .select-holder.default-blue
+                  select(name="currency", data-role="select", data-placeholder="Change currency")
+                    option(value="GBP") GBP
+                    option(value="USD") USD
+                    option(value="EUR") EUR
+                    option(value="CAD") CAD
+                    option(value="AUD") AUD
+                    option(value="NZD") NZD
+                    option(value="HKD") HKD
+                    option(value="SGD") SGD
+                    option(value="KRW") KRW
+              h3 Input style
+              .form-control
+                .select-holder.input-style.has-scroll
+                  include modules/delivery_country
+              h3 Border style
+              .form-control
+                .select-holder.border-style
+                  select(name="currency", data-role="select")
+                    option(value="GBP", selected) GBP
+                    option(value="USD") USD
+                    option(value="EUR") EUR
+                    option(value="CAD") CAD
+                    option(value="AUD") AUD
+                    option(value="NZD") NZD
+                    option(value="HKD") HKD
+                    option(value="SGD") SGD
+                    option(value="KRW") KRW
+          .example-box
+            h2.ui-title Autogrow element
+            .textarea-container
+              .textarea-box(data-char-count-container, data-char-limit="350")
+                textarea(data-role="expanding-textarea", spellcheck="false", data-char-count-field) Hello Sally,&#10;Welcome to your very own wondrous ink adventure. inside these pages you'll discover an enchanting world of magical fun that's all about you. while you are reading your book, be sure to look out for your secret key to help you continue your adventure online.
+                em.char-count <span class="count" data-char-count-number>300</span> of 350 characters available
+          .example-box
+            h2.ui-title Radio element
+            ul.radio-list
+              li
+                input(type="radio", id="boy-1", name="gender-2", data-role="boy")
+                label.radio-label(for="boy-1") Boy
+              li
+                input(type="radio", id="girl-1", name="gender-2", data-role="girl")
+                label.radio-label(for="girl-1") Girl
+          .example-box
+            h2.ui-title Radio list
+            ul.radio-list-small
+              li
+                input(type="radio" name="data-name-1" id="option-1")
+                label(for="option-1") Yes please I would love the gift wrap
+              li
+                input(type="radio" name="data-name-1" id="option-2")
+                label(for="option-2") No thank you
+      //main ends
+      include modules/footer
+    //wrapper ends
+    script(type='text/javascript').
+      WebFontConfig = {
+        google: { families: [ 'Cardo:400,700:latin', 'Lato:400,300,700:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    //jQuery library
+    // build:js js/jquery.min.js
+    script(src="../bower_components/jquery/dist/jquery.min.js")
+    // /build 
+    // build:remove 
+    block bowerScripts
+      //modernizr plugin
+      script(src="../bower_components/modernizr/modernizr.js")
+      //detectizr plugin
+      script(src="../bower_components/detectizr/dist/detectizr.js")
+      //autogrow plugin
+      script(src="../bower_components/autosize/dist/autosize.min.js")
+      //fastclick plugin
+      script(src="../bower_components/fastclick/lib/fastclick.js")
+      //placeholder plugin
+      script(src="../bower_components/jquery-placeholder/jquery.placeholder.js")
+      //hammer plugin
+      script(src="../bower_components/hammerjs/hammer.min.js")
+      script(src="../bower_components/jquery-hammerjs/jquery.hammer.js")
+      //retina plugin
+      script(src="../bower_components/retina.js/dist/retina.min.js")
+      //imagesLoaded plugin
+      script(src="../bower_components/imagesLoaded/imagesLoaded.pkgd.min.js")
+      //jquery lazyload plugin
+      script(src="../bower_components/jquery_lazyload/jquery.lazyload.js")
+    // /build 
+    +replaceTpl('markup')
+      block markupScripts
+        script(src="js/plugins/modernizr.min.js")
+        script(src="js/plugins/detectizr.min.js")
+        script(src="js/plugins/autosize.min.js")
+        script(src="js/plugins/fastclick.min.js")
+        script(src="js/plugins/jquery.placeholder.min.js")
+        script(src="js/plugins/hammer.min.js")
+        script(src="js/plugins/jquery.hammer.min.js")
+        script(src="js/plugins/retina.min.js")
+        script(src="js/plugins/imagesLoaded.pkgd.min.js")
+    // build:remove:build 
+    //include plugins
+    block pluginsScripts 
+      script(src="js/jquery.form-validator.js")
+      script(src="js/experiments.js")
+    //init plugins
+    block initScripts
+      script(src="js/jquery.init-book-gallery.js")
+      script(src="js/jquery.show-error.js")
+      script(src="js/jquery.utilities.js")
+      script(src="js/jquery.common.js")
+    // /build 
+    +replaceTpl('build')
+      script(src="js/wondrous-ink.min.js")
+    = "\n\r  "

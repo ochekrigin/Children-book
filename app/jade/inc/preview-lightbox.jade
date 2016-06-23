@@ -1,0 +1,101 @@
+#preview.lightbox(data-lightbox-gallery="true")
+  section.visual.at-front-cover(data-book-gallery)
+    .container
+      h1 The Wondrous world of
+      .holder
+        a.btn.large.disabled.prev(href="#")
+          span
+            i.icon-arrow-left
+        .info-box.left
+          span.hidden.m-visible Tap book pages to preview
+          span.m-hidden Swipe pages to preview
+        .mask
+          .slideset.bookblock.deploy
+            .bookblock-deploy(data-character="smart")
+              img.hidden.m-visible.cover(src="images/book/cover.jpg", alt="img-description", width="1280", height="462")
+            .bookblock-deploy(data-character="smart")
+              img(src="images/book/img-book-1.jpg", alt="img-description", width="1013", height="448")
+            .bookblock-deploy(data-character="smart")
+              img(src="images/book/img-book-2.jpg", alt="img-description", width="1013", height="448")
+            .bookblock-deploy(data-character="smart")
+              img(src="images/book/img-book-1.jpg", alt="img-description", width="1013", height="448")
+            .bookblock-deploy(data-character="smart")
+              img(src="images/book/img-book-2.jpg", alt="img-description", width="1013", height="448")
+            .bookblock-deploy(data-character="amazing")
+              img(src="images/book/img-book-1.jpg", alt="img-description", width="1013", height="448")
+            .bookblock-deploy(data-character="lively")
+              img(src="images/book/img-book-2.jpg", alt="img-description", width="1013", height="448")
+            .bookblock-deploy(data-character="lovely")
+              img(src="images/book/img-book-1.jpg", alt="img-description", width="1013", height="448")
+            .bookblock-deploy(data-character="youthful")
+              img(src="images/book/img-book-2.jpg", alt="img-description", width="1013", height="448")
+            .bookblock-deploy(data-character="special")
+              img(src="images/book/img-book-1.jpg", alt="img-description", width="1013", height="448")
+            .bookblock-deploy(data-character="magnificient")
+              img(src="images/book/img-book-2.jpg", alt="img-description", width="1013", height="448")
+            .bookblock-deploy(data-character="intelligent")
+              img(src="images/book/img-book-1.jpg", alt="img-description", width="1013", height="448")
+            .bookblock-deploy(data-character="terrific")
+              img(src="images/book/img-book-2.jpg", alt="img-description", width="1013", height="448")
+            .bookblock-deploy(data-character="helpful")
+              img(src="images/book/img-book-1.jpg", alt="img-description", width="1013", height="448")
+            .bookblock-deploy(data-character="helpful")
+              img.cover-last(src="images/book/rear-cover.jpg", alt="img-description", width="1280", height="462")
+        a.btn.large.next(href="#")
+          span
+            i.icon-arrow-right
+      .pager
+        .info-box.right Or click letters of name to preview related sections
+        ul.list
+          li.active(data-selected-character="smart")
+            span.item-table
+              span.item-cell
+                button.element
+                  span.letter s
+          li(data-selected-character="amazing")
+            span.item-table
+              span.item-cell
+                button.element
+                  span.letter a
+          li(data-selected-character="lively")
+            span.item-table
+              span.item-cell
+                button.element
+                  span.letter l
+          li(data-selected-character="lovely")
+            span.item-table
+              span.item-cell
+                button.element
+                  span.letter l
+          li(data-selected-character="youthful")
+            span.item-table
+              span.item-cell
+                button.element
+                  span.letter y
+        ul.list
+          li(data-selected-character="special")
+            span.item-table
+              span.item-cell
+                button.element
+                  span.letter s
+          li(data-selected-character="magnificient")
+            span.item-table
+              span.item-cell
+                button.element
+                  span.letter m
+          li(data-selected-character="intelligent")
+            span.item-table
+              span.item-cell
+                button.element
+                  span.letter i
+          li(data-selected-character="terrific")
+            span.item-table
+              span.item-cell
+                button.element
+                  span.letter t
+          li(data-selected-character="helpful")
+            span.item-table
+              span.item-cell
+                button.element
+                  span.letter h
+  //visual ends

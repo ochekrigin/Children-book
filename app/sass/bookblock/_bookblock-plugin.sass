@@ -1,0 +1,146 @@
+$_left: even
+$_right: odd
+
+@mixin bookblock($perspective, $duration: 1s, $timing: ease)
+  &
+    perspective: $perspective
+
+  & .bookblock-item
+    +transition(transform $duration $timing)
+
+@media only screen and (min-width: $m-breakpoint)
+  // Instantiate default bookblock
+  .bookblock
+    +bookblock($bookblock-perspective, $bookblock-duration, $bookblock-timing)
+
+  // Disable transitions if plugin has not initialised
+  .bookblock:not(.loaded) *
+    +transition(none !important)
+
+  .bookblock
+    +transform-style(preserve-3d)
+    &:after
+      content: ''
+      display: table
+      clear: both
+
+  .bookblock-item
+    position: absolute
+    width: 50%
+    min-height: 100%
+    max-height: 100% // IE 10/11
+    background: black
+    overflow: hidden
+    backface-visibility: hidden
+
+    // left pages before active spread
+    // active left page
+    +transform(rotateY(0deg))
+
+  .bookblock-item:nth-child(2)
+    float: left
+    position: relative
+    z-index: 1
+  
+  .bookblock-HiddenCover 
+    & + .bookblock-item
+      &:after
+        display: none
+      .bookblock-deploy > img
+        opacity: 0
+        visibility: hidden
+  
+  .at-rear-cover .bookblock-item.is-active:nth-child(2n+1)
+    opacity: 0
+    visibility: hidden
+
+  // left
+  .bookblock-item:nth-child(#{$_left})
+    +transform-origin(100%)
+    left: 0
+    &:after
+      // background: image-url('book/bg-shadow.png') repeat-y
+      bottom: 0
+      content: ''
+      height: 449px
+      right: 0
+      position: absolute
+      top: 0
+      width: 231px
+      z-index: 2
+
+
+  // right pages
+  .bookblock-item:nth-child(#{$_right})
+    +transform-origin(0)
+    right: 0
+
+    // right pages before active spread
+    +transform(rotateY(-180deg))
+
+  // active spread
+  .bookblock-item.is-active
+    z-index: 3
+
+
+  // active left page
+  .bookblock-item.is-active:nth-child(#{$_left})
+    +transform(rotateY(1deg))
+
+  // active right page
+  .bookblock-item.is-active:nth-child(#{$_right})
+    +transform(rotateY(-1deg))
+
+    // left pages after active spread
+  .bookblock-item.is-active:nth-child(#{$_right}) ~ .bookblock-item:nth-child(#{$_left})
+    +transform(rotateY(180deg))
+
+  // right pages after active spread
+  .bookblock-item.is-active:nth-child(#{$_right}) ~ .bookblock-item:nth-child(#{$_right})
+    +transform(rotateY(0deg))
+
+  // page transistioning out
+  .bookblock-item.last-active
+    z-index: 1
+
+  // Stacking order of concurrent animating pages
+  .bookblock-item.animating:nth-child(#{$_right})
+    z-index: 4
+
+  .bookblock-item.animating:nth-child(#{$_right}) ~ .bookblock-item.animating
+    z-index: 3
+
+  .bookblock-item.animating + .bookblock-item:not(.animating):nth-child(#{$_right})
+    z-index: 1
+
+
+  // If JS fails show first spread
+  .bookblock > .bookblock-deploy
+    display: none
+
+  .bookblock > .bookblock-deploy:first-child
+    display: block
+    width: 100%
+    overflow: hidden
+
+  // Basic functionality for devices that don't support 3d
+  .no-csstransforms3d .bookblock-item
+    display: none
+
+  .no-csstransforms3d .bookblock-item.is-active
+    display: block
+    position: relative
+    float: left
+
+  // Spreads to pages
+  .bookblock-deploy
+    position: relative
+    width: 200%
+
+  .bookblock-item.with-deploy:nth-child(#{$_right}) .bookblock-deploy
+    left: -100%
+
+  // Older browsers (<IE9 don't have nth-child selectors)
+  // Needs to be on own line to work in IE8
+  .no-csstransforms3d .bookblock-item.with-deploy.is-active + .bookblock-item.with-deploy.is-active .bookblock-deploy
+    left: -100%

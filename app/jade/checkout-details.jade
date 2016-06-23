@@ -1,0 +1,135 @@
+extends modules/layout
+block title
+  - title = 'Checkout | Details';
+  - footerView = true;
+  - step1      = true;
+block body
+  body.light-scheme.checkout-details
+    //wrapper starts
+    #wrapper
+      include modules/header
+      //main starts
+      #main
+        //checkout section starts
+        section.checkout-section
+          h1.accessibility Checkout details
+          .container
+            .holder
+              form.checkout-form(action="#", novalidate)
+                header.heading
+                  include modules/wizard-steps
+                  a.btn-back(href="#")
+                    i.icon-arrow-left.blue
+                    | Back
+                fieldset
+                  .row
+                    .col
+                      h2 Your details
+                      .order-box(data-add-class-parent)
+                        .img-holder
+                          img.lazy(data-original="images/content/img-preview.jpg", src="images/none.gif", alt="img-description", width="159", height="140")
+                        .wrap
+                          h3
+                            span.count 1
+                            | x Wondrous books
+                          strong.total Order total <span class="price">£23.99</span>
+                          a.view-all(href="#", data-add-class)
+                            span.show View all order details
+                            span.hide Hide details
+                        .dropdown
+                          ul.price-list
+                            li
+                              span.title Subtotal:
+                              strong.price £19.99
+                            li
+                              span.title Delivery:
+                              strong.price £03.99
+                            li
+                              span.title Discount:
+                              strong.price £00.00
+                            li.total
+                              span.title Order total:
+                              strong.price £23.99
+                    .col
+                      .form-control
+                        label(for="first-name") First name: <span class="red">This field is required.</span>
+                        input(type="text", id="first-name" data-type-required)
+                        span.message-error Please specify first name
+                      .form-control
+                        label(for="last-name") Last name: <span class="red">This field is required.</span>
+                        input(type="text", id="last-name" data-type-required)
+                        span.message-error Please specify last name
+                      .form-control
+                        label(for="email") Your email address: <span class="red">This field is required.</span>
+                        input(type="email", id="email" data-type-required)
+                        span.message-error Please specify email
+                      .note
+                        input(type="checkbox", id="newsletter")
+                        label.checkbox-label(for="newsletter") Let us keep you posted regarding new products, offers and promotions
+                      .btn-holder
+                        button.btn(type="submit")
+                          span Next
+              span.ill-shadow
+        //preview message ends
+      //main ends
+      include modules/footer
+      span.ill-body
+        img.lazy(data-original="images/backgrounds/bg-body.jpg", alt="img-description", width="1440", height="863")
+    //wrapper ends
+    script(type='text/javascript').
+      WebFontConfig = {
+        google: { families: [ 'Cardo:400,700:latin', 'Lato:400,300,700:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    //jQuery library
+    // build:js js/jquery.min.js
+    script(src="../bower_components/jquery/dist/jquery.min.js")
+    // /build 
+    // build:remove 
+    block bowerScripts
+      //modernizr plugin
+      script(src="../bower_components/modernizr/modernizr.js")
+      //detectizr plugin
+      script(src="../bower_components/detectizr/dist/detectizr.js")
+      //fastclick plugin
+      script(src="../bower_components/fastclick/lib/fastclick.js")
+      //placeholder plugin
+      script(src="../bower_components/jquery-placeholder/jquery.placeholder.js")
+      //retina plugin
+      script(src="../bower_components/retina.js/dist/retina.min.js")
+      //imagesLoaded plugin
+      script(src="../bower_components/imagesLoaded/imagesLoaded.pkgd.min.js")
+      //jquery lazyload plugin
+      script(src="../bower_components/jquery_lazyload/jquery.lazyload.js")
+    // /build 
+    +replaceTpl('markup')
+      block markupScripts
+        script(src="js/plugins/modernizr.min.js")
+        script(src="js/plugins/detectizr.min.js")
+        script(src="js/plugins/fastclick.min.js")
+        script(src="js/plugins/jquery.placeholder.min.js")
+        script(src="js/plugins/retina.min.js")
+        script(src="js/plugins/imagesLoaded.pkgd.min.js")
+        script(src="js/plugins/jquery.lazyload.js")
+    // build:remove:build 
+    //include plugins
+    block pluginsScripts
+      script(src="js/jquery.form-validator.js")
+      script(src="js/jquery.ajax-setup.js")
+      script(src="js/jquery.buy.js")
+      script(src="js/experiments.js")
+    //init plugins
+    block initScripts
+      script(src="js/jquery.utilities.js")
+      script(src="js/jquery.common.js")
+    // /build 
+    +replaceTpl('build')
+      script(src="js/wondrous-ink.min.js")
+    = "\n\r  "

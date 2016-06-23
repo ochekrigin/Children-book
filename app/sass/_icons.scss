@@ -1,0 +1,249 @@
+// Retina Sprite Mixins
+@mixin retina-sprite-background(
+	$name,
+	$icons,
+	$retina,
+	$icon-xs-breakpoint:false,
+	$icon-sm-breakpoint:false,
+	$icon-m-breakpoint:false,
+	$icon-l-breakpoint:false,
+	$icon-xl-breakpoint:false) {
+
+	@if ($icon-xs-breakpoint) or ($icon-sm-breakpoint) or ($icon-m-breakpoint) or ($icon-l-breakpoint) or ($icon-xl-breakpoint) {
+
+		@if $icon-xs-breakpoint {
+			@include actionRetinaPlusBreakpoint($name, $icons, $retina, $icon-xs-breakpoint);
+		}
+		@if $icon-sm-breakpoint {
+			@include actionRetinaPlusBreakpoint($name, $icons, $retina, $icon-sm-breakpoint);
+		}
+		@if $icon-m-breakpoint {
+			@include actionRetinaPlusBreakpoint($name, $icons, $retina, $icon-m-breakpoint);
+		}
+		@if $icon-l-breakpoint {
+			@include actionRetinaPlusBreakpoint($name, $icons, $retina, $icon-l-breakpoint);
+		}
+		@if $icon-xl-breakpoint {
+			@include actionRetinaPlusBreakpoint($name, $icons, $retina, $icon-xl-breakpoint);
+		}
+
+	} @else {
+		background-repeat: no-repeat;
+		background-image: sprite-url($icons);
+		background-position: sprite-position($icons,$name);
+		height:image-height(sprite-file($icons, $name));
+		width: image-width(sprite-file($icons, $name));
+
+		// Media Query for retina
+		@media (min--moz-device-pixel-ratio: 1.3),
+			(-o-min-device-pixel-ratio: 2.6/2),
+			(-webkit-min-device-pixel-ratio: 1.3),
+			(min-device-pixel-ratio: 1.3),
+			(min-resolution: 1.3dppx) {
+				background-image: sprite-url($retina);
+				background-position: 0 round(nth(sprite-position($retina, $name), 2) / 2);
+				height: round(image-height(sprite-file($retina, $name)) / 2);
+				width: round(image-width(sprite-file($retina, $name)) / 2 );
+
+				// treat the @2x retina sprite sheet as 50% wide for double resolution upon display
+				$double-width:ceil(image-width(sprite-path($retina)) / 2);
+				$double-height:ceil(image-height(sprite-path($retina)) / 2);
+				@include background-size($double-width $double-height);
+			}
+	}
+
+}
+@mixin actionRetinaPlusBreakpoint($name, $icons, $retina, $breakpoint) {
+	@media only screen and (min-width: $breakpoint) {
+		background-repeat: no-repeat;
+		background-image: sprite-url($icons);
+		background-position: sprite-position($icons,$name);
+		height: image-height(sprite-file($icons, $name));
+		width: image-width(sprite-file($icons, $name));
+	}
+	// Media Query for retina
+	@media (min--moz-device-pixel-ratio: 1.3) and (min-width: $breakpoint),
+		(-o-min-device-pixel-ratio: 2.6/2) and (min-width: $breakpoint),
+		(-webkit-min-device-pixel-ratio: 1.3) and (min-width: $breakpoint),
+		(min-device-pixel-ratio: 1.3) and (min-width: $breakpoint),
+		(min-resolution: 1.3dppx) and (min-width: $breakpoint) {
+			background-image: sprite-url($retina);
+			background-position: 0 ceil(nth(sprite-position($retina, $name), 2) / 2);
+			height:ceil(image-height(sprite-file($retina, $name)) / 2);
+			width: ceil(image-width(sprite-file($retina, $name)) / 2 );
+
+			// treat the @2x retina sprite sheet as 50% wide for double resolution upon display
+			$double-width: ceil(image-width(sprite-path($retina)) / 2);
+			$double-height: ceil(image-height(sprite-path($retina)) / 2);
+			@include background-size($double-width $double-height);
+		}
+}
+
+/* icon styles start */
+$icons: sprite-map('../images/icons/*.png', $layout: smart);
+$retina: sprite-map('../images/icons2x/*.png', $layout: vertical, $spacing: 10px);
+
+[class^="icon-"] {
+	display: inline-block;
+	vertical-align: middle;
+}
+.icon-logo {
+	@include retina-sprite-background(logo-small, $icons, $retina);
+	@include retina-sprite-background(logo, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-logo-home {
+	@include retina-sprite-background(logo-home, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-basket {
+	@include retina-sprite-background(basket, $icons, $retina);
+}
+.with-cover:not(.blue) {
+	.icon-basket {
+		@include retina-sprite-background(basket-white, $icons, $retina);
+		vertical-align: top;
+	}
+}
+.icon-basket-big {
+	@include retina-sprite-background(basket-big, $icons, $retina);
+}
+.icon-basket-small {
+	@include retina-sprite-background(basket-small, $icons, $retina);
+}
+.icon-basket-blue {
+	@include retina-sprite-background(basket-blue-small, $icons, $retina);
+	@include retina-sprite-background(basket-blue, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-social-twitter {
+	@include retina-sprite-background(twitter-small, $icons, $retina);
+	@include retina-sprite-background(twitter, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-social-pinterest {
+	@include retina-sprite-background(pinterest-small, $icons, $retina);
+	@include retina-sprite-background(pinterest, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-social-facebook {
+	@include retina-sprite-background(facebook-small, $icons, $retina);
+	@include retina-sprite-background(facebook, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-bullet {
+	@include retina-sprite-background(bullet-small, $icons, $retina);
+	@include retina-sprite-background(bullet, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-butterfly {
+	@include retina-sprite-background(butterfly-small, $icons, $retina);
+	@include retina-sprite-background(bullet, $icons, $retina, $icon-xl-breakpoint: $xl-breakpoint);
+}
+.icon-arrow-left {
+	@include retina-sprite-background(arrow-left, $icons, $retina, $icon-l-breakpoint: $l-breakpoint);
+	&.blue {
+		@include retina-sprite-background(arrow-left-blue, $icons, $retina);
+	}
+}
+.icon-arrow-right {
+	@include retina-sprite-background(arrow-right, $icons, $retina, $icon-l-breakpoint: $l-breakpoint);
+}
+.icon-arrow-left-small {
+	@include retina-sprite-background(arrow-left-small, $icons, $retina, $icon-l-breakpoint: $l-breakpoint);
+}
+.icon-arrow-right-small {
+	@include retina-sprite-background(arrow-right-small, $icons, $retina, $icon-l-breakpoint: $l-breakpoint);
+}
+.icon-arrow-down {
+	@include retina-sprite-background(arrow-down-small, $icons, $retina);
+	@include retina-sprite-background(arrow-down, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-arrow-down-blue {
+	@include retina-sprite-background(arrow-down-blue-small, $icons, $retina);
+	@include retina-sprite-background(arrow-down-blue, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-user {
+	@include retina-sprite-background(user-small, $icons, $retina);
+	@include retina-sprite-background(user, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-user-blue {
+	@include retina-sprite-background(user-small-blue, $icons, $retina);
+	@include retina-sprite-background(user-blue, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-envelope {
+	@include retina-sprite-background(envelope-small, $icons, $retina);
+	@include retina-sprite-background(envelope, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-envelope-blue {
+	@include retina-sprite-background(envelope-small-blue, $icons, $retina);
+	@include retina-sprite-background(envelope-blue, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-credit-card {
+	@include retina-sprite-background(credit-card-small, $icons, $retina);
+	@include retina-sprite-background(credit-card, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-credit-card-blue {
+	@include retina-sprite-background(credit-card-small-blue, $icons, $retina);
+	@include retina-sprite-background(credit-card-blue, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-caret-right {
+	@include retina-sprite-background(caret-right-small, $icons, $retina);
+	@include retina-sprite-background(caret-right, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-check-empty {
+	@include retina-sprite-background(check-empty-small, $icons, $retina);
+	@include retina-sprite-background(check-empty, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-check {
+	@include retina-sprite-background(check-small, $icons, $retina);
+	@include retina-sprite-background(check, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.paypal {
+	@include retina-sprite-background(paypal-mobile, $icons, $retina);
+	@include retina-sprite-background(paypal, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-visa {
+	@include retina-sprite-background(visa-small, $icons, $retina);
+	@include retina-sprite-background(visa, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-visa-electron {
+	@include retina-sprite-background(visa-electron-small, $icons, $retina);
+	@include retina-sprite-background(visa-electron, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-mastercard {
+	@include retina-sprite-background(mastercard-small, $icons, $retina);
+	@include retina-sprite-background(mastercard, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-maestro {
+	@include retina-sprite-background(maestro-small, $icons, $retina);
+	@include retina-sprite-background(maestro, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+.icon-paypal-card {
+	@include retina-sprite-background(paypal-card-small, $icons, $retina);
+	@include retina-sprite-background(paypal-card, $icons, $retina, $icon-m-breakpoint: $m-breakpoint);
+}
+/* icon styles end */
+
+/* ills styles start */
+$ills: sprite-map('../images/ills/*.png', $layout: smart);
+$illsRetina: sprite-map('../images/ills@2x/*.png', $layout: vertical, $spacing: 20px);
+
+.ill-chain {
+	@include retina-sprite-background(chain-small, $ills, $illsRetina);
+	@include retina-sprite-background(chain, $ills, $illsRetina, $icon-xl-breakpoint: $xl-breakpoint);
+}
+.ill-sticker {
+	@include retina-sprite-background(sticker-small, $ills, $illsRetina);
+	@include retina-sprite-background(sticker, $ills, $illsRetina, $icon-xl-breakpoint: $xl-breakpoint);
+}
+.ill-cloud-white {
+	@include retina-sprite-background(cloud-white-small, $ills, $illsRetina);
+	@include retina-sprite-background(cloud-white, $ills, $illsRetina, $icon-xl-breakpoint: $l-breakpoint);
+}
+.ill-cloud-white-hover {
+	@include retina-sprite-background(cloud-white-hover, $ills, $illsRetina, $icon-xl-breakpoint: $l-breakpoint);
+}
+.ill-cloud-blue {
+	@include retina-sprite-background(cloud-blue-small, $ills, $illsRetina);
+	@include retina-sprite-background(cloud-blue, $ills, $illsRetina, $icon-xl-breakpoint: $l-breakpoint);
+}
+.ill-cloud-blue-hover {
+	@include retina-sprite-background(cloud-blue-hover, $ills, $illsRetina, $icon-xl-breakpoint: $l-breakpoint);
+}
+.ill-elk {@include retina-sprite-background(elk, $ills, $illsRetina);}
+.ill-truck {@include retina-sprite-background(truck, $ills, $illsRetina);}
+/* ills styles end */

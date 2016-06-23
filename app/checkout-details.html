@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>Checkout | Details</title>
+  <!-- build:remove -->
+  <link rel="stylesheet" href="../bower_components/fancybox/source/jquery.fancybox.css">
+  <link rel="stylesheet" href="../bower_components/jquery-ui/themes/blitzer/jquery-ui.min.css">
+  <!-- /build -->
+  <!-- build:template
+  <% if (environment === 'markup') { %>
+  <link rel="stylesheet" href="css/fancybox/jquery.fancybox.css">
+  <% } %>
+  /build -->
+  <!-- build:css:build css/wondrous-ink.min.css -->
+  <link rel="stylesheet" href="css/all.css">
+  <!-- /build -->
+  <!--[if IE 9]>
+  <link rel="stylesheet" href="css/ie9.css">
+  <![endif]-->
+  <!-- build:remove -->
+  <!-- /build -->
+  <!-- build:template
+  <%= ie %>
+  /build -->
+</head>
+<body class="light-scheme checkout-details">
+  <!--wrapper starts-->
+  <div id="wrapper">
+    <!--header starts-->
+    <header id="header">
+      <div class="container">
+        <div class="holder"><strong class="logo"><a href="index.html">Wondrous INK</a></strong>
+          <nav id="nav" data-add-class-parent="data-add-class-parent"><a href="#" data-add-class="data-add-class" class="opener m-hidden"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
+            <ul>
+              <li><a href="about-us.html">About us</a>
+              </li>
+              <li><a href="group-discounts.html">Discounts</a>
+              </li>
+              <li><a href="#">Blog</a>
+              </li>
+              <li><a href="log-in-to-my-world.html">Login</a>
+              </li>
+              <li class="hidden m-visible"><a href="basket.html"><i class="icon-basket"></i>Basket</a>
+              </li>
+            </ul>
+          </nav><a href="basket.html" class="basket m-hidden"><em class="count">2</em><i class="icon-basket-small"></i></a>
+        </div>
+      </div>
+    </header>
+    <!--header ends-->
+    <!--main starts-->
+    <div id="main">
+      <!--checkout section starts-->
+      <section class="checkout-section">
+        <h1 class="accessibility">Checkout details</h1>
+        <div class="container">
+          <div class="holder">
+            <form action="#" novalidate class="checkout-form">
+              <header class="heading">
+                <ul class="steps-list">
+                  <li class="step-1 active"><span class="item"><span class="box"><span class="item-table"><span class="item-cell"><i class="icon-user"></i><i class="icon-user-blue"></i><span class="text">Details</span></span></span></span></span>
+                  </li>
+                  <li class="step-2">
+                    <div class="item"><span class="box"><span class="item-table"><span class="item-cell"><i class="icon-envelope"></i><i class="icon-envelope-blue"></i><span class="text">Delivery address</span></span></span><i class="ill"></i></span></div>
+                  </li>
+                  <li class="step-3">
+                    <div class="item"><span class="box"><span class="item-table"><span class="item-cell"><i class="icon-credit-card"></i><i class="icon-credit-card-blue"></i><span class="text">Payment</span></span></span><i class="ill"></i></span></div>
+                  </li>
+                </ul><a href="#" class="btn-back"><i class="icon-arrow-left blue"></i>Back</a>
+              </header>
+              <fieldset>
+                <div class="row">
+                  <div class="col">
+                    <h2>Your details</h2>
+                    <div data-add-class-parent class="order-box">
+                      <div class="img-holder"><img data-original="images/content/img-preview.jpg" src="images/none.gif" alt="img-description" width="159" height="140" class="lazy"></div>
+                      <div class="wrap">
+                        <h3><span class="count">1</span>x Wondrous books</h3><strong class="total">Order total <span class="price">£23.99</span></strong><a href="#" data-add-class class="view-all"><span class="show">View all order details</span><span class="hide">Hide details</span></a>
+                      </div>
+                      <div class="dropdown">
+                        <ul class="price-list">
+                          <li><span class="title">Subtotal:</span><strong class="price">£19.99</strong></li>
+                          <li><span class="title">Delivery:</span><strong class="price">£03.99</strong></li>
+                          <li><span class="title">Discount:</span><strong class="price">£00.00</strong></li>
+                          <li class="total"><span class="title">Order total:</span><strong class="price">£23.99</strong></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-control">
+                      <label for="first-name">First name: <span class="red">This field is required.</span></label>
+                      <input type="text" id="first-name" data-type-required><span class="message-error">Please specify first name</span>
+                    </div>
+                    <div class="form-control">
+                      <label for="last-name">Last name: <span class="red">This field is required.</span></label>
+                      <input type="text" id="last-name" data-type-required><span class="message-error">Please specify last name</span>
+                    </div>
+                    <div class="form-control">
+                      <label for="email">Your email address: <span class="red">This field is required.</span></label>
+                      <input type="email" id="email" data-type-required><span class="message-error">Please specify email</span>
+                    </div>
+                    <div class="note">
+                      <input type="checkbox" id="newsletter">
+                      <label for="newsletter" class="checkbox-label">Let us keep you posted regarding new products, offers and promotions</label>
+                    </div>
+                    <div class="btn-holder">
+                      <button type="submit" class="btn"><span>Next</span></button>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </form><span class="ill-shadow"></span>
+          </div>
+        </div>
+      </section>
+      <!--preview message ends-->
+    </div>
+    <!--main ends-->
+    <div class="ill-footer"></div><span class="ill-body"><img data-original="images/backgrounds/bg-body.jpg" alt="img-description" width="1440" height="863" class="lazy"></span>
+  </div>
+  <!--wrapper ends-->
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: { families: [ 'Cardo:400,700:latin', 'Lato:400,300,700:latin' ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
+  <!--jQuery library-->
+  <!-- build:js js/jquery.min.js-->
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- /build -->
+  <!-- build:remove -->
+  <!--modernizr plugin-->
+  <script src="../bower_components/modernizr/modernizr.js"></script>
+  <!--detectizr plugin-->
+  <script src="../bower_components/detectizr/dist/detectizr.js"></script>
+  <!--fastclick plugin-->
+  <script src="../bower_components/fastclick/lib/fastclick.js"></script>
+  <!--placeholder plugin-->
+  <script src="../bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+  <!--retina plugin-->
+  <script src="../bower_components/retina.js/dist/retina.min.js"></script>
+  <!--imagesLoaded plugin-->
+  <script src="../bower_components/imagesLoaded/imagesLoaded.pkgd.min.js"></script>
+  <!--jquery lazyload plugin-->
+  <script src="../bower_components/jquery_lazyload/jquery.lazyload.js"></script>
+  <!-- /build -->
+  <!-- build:template
+  <% if (environment === 'markup') { %>
+  <script src="js/plugins/modernizr.min.js"></script>
+  <script src="js/plugins/detectizr.min.js"></script>
+  <script src="js/plugins/fastclick.min.js"></script>
+  <script src="js/plugins/jquery.placeholder.min.js"></script>
+  <script src="js/plugins/retina.min.js"></script>
+  <script src="js/plugins/imagesLoaded.pkgd.min.js"></script>
+  <script src="js/plugins/jquery.lazyload.js"></script>
+  <% } %>
+  /build -->
+  <!-- build:remove:build -->
+  <!--include plugins-->
+  <script src="js/jquery.form-validator.js"></script>
+  <script src="js/jquery.ajax-setup.js"></script>
+  <script src="js/jquery.buy.js"></script>
+  <script src="js/experiments.js"></script>
+  <!--init plugins-->
+  <script src="js/jquery.utilities.js"></script>
+  <script src="js/jquery.common.js"></script>
+  <!-- /build -->
+  <!-- build:template
+  <% if (environment === 'build') { %>
+  <script src="js/wondrous-ink.min.js"></script>
+  <% } %>
+  /build -->
+  
+</body>
+</html>

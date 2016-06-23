@@ -1,0 +1,151 @@
+@mixin reset-list($margin: 0, $padding: 0, $list-style-type: none){
+	list-style: $list-style-type;
+	margin: $margin;
+	padding: $padding;
+}
+
+@mixin square($width: 0) {
+	width: $width;
+	height: $width;
+}
+
+@mixin clear-fix() {
+	&:after {
+		clear: both;
+		content: "";
+		display: block;
+	}
+}
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};
+}
+
+@include keyframes(loader) {
+	from {
+		right: 100%;
+	}
+	to {
+		right: 0%;
+	}
+}
+
+@include keyframes(hide) {
+	from {
+		opacity: 1;
+		visibility: visible;
+	}
+	to {
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+@include keyframes(opacity) {
+	from {
+		opacity: .5;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@include keyframes(show-hide) {
+	0% {
+		opacity: 0;
+	}
+	10% {
+		opacity: .2;
+		visibility: visible;
+	}
+	50% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+%cloud-bottom-white {
+	background: image-url('backgrounds/bg-cloud-bottom-white-small.png') repeat-x 50% 100%;
+	content: '';
+	height: 59px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	bottom: -59px;
+	z-index: 1;
+	@media only screen and (min-width: $l-breakpoint) {
+		background-image: url('../images/backgrounds/bg-cloud-bottom-white.png');
+		height: 122px;
+		bottom: -122px;
+	}
+}
+
+%cloud-top-white {
+	background: image-url('backgrounds/bg-cloud-top-white-small.png') repeat-x 50% 100%;
+	content: '';
+	height: 59px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: -59px;
+	z-index: 1;
+	@media only screen and (min-width: $l-breakpoint) {
+		background-image: image-url('backgrounds/bg-cloud-top-white.png');
+		height: 125px;
+		top: -125px;
+	}
+}
+
+%cloud-top-white-orange {
+	background: image-url('backgrounds/bg-cloud-top-white-small.png') repeat-x 50% 100%;
+	content: '';
+	height: 59px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: -59px;
+	z-index: 1;
+	@media only screen and (min-width: $l-breakpoint) {
+		background-image: image-url('backgrounds/bg-cloud-top-white-orange.png');
+		height: 97px;
+		top: -97px;
+	}
+}
+
+%cloud-top-white-blue {
+	background: image-url('backgrounds/bg-cloud-top-white-small.png') repeat-x 50% 100%;
+	content: '';
+	height: 59px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: -59px;
+	z-index: 1;
+	@media only screen and (min-width: $l-breakpoint) {
+		background-image: url('../images/backgrounds/bg-cloud-top-white-blue.png');
+		height: 98px;
+		top: -98px;
+	}
+}

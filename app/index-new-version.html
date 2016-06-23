@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>Homepage</title>
+  <!-- build:remove -->
+  <link rel="stylesheet" href="../bower_components/fancybox/source/jquery.fancybox.css">
+  <link rel="stylesheet" href="../bower_components/jquery-ui/themes/blitzer/jquery-ui.min.css">
+  <!-- /build -->
+  <!-- build:template
+  <% if (environment === 'markup') { %>
+  <link rel="stylesheet" href="css/fancybox/jquery.fancybox.css">
+  <% } %>
+  /build -->
+  <!-- build:css:build css/wondrous-ink.min.css -->
+  <link rel="stylesheet" href="css/all.css">
+  <!-- /build -->
+  <!--[if IE 9]>
+  <link rel="stylesheet" href="css/ie9.css">
+  <![endif]-->
+  <!-- build:remove -->
+  <!-- /build -->
+  <!-- build:template
+  <%= ie %>
+  /build -->
+</head>
+<body class="home">
+  <!--wrapper starts-->
+  <div id="wrapper" class="with-cover blue new-home">
+    <!--header starts-->
+    <header id="header">
+      <div class="container">
+        <div class="holder"><strong class="logo"><a href="index.html">Wondrous INK</a></strong>
+          <nav id="nav" data-add-class-parent="data-add-class-parent"><a href="#" data-add-class="data-add-class" class="opener m-hidden"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
+            <ul>
+              <li><a href="about-us.html">About us</a>
+              </li>
+              <li><a href="group-discounts.html">Discounts</a>
+              </li>
+              <li><a href="#">Blog</a>
+              </li>
+              <li><a href="log-in-to-my-world.html">Login</a>
+              </li>
+              <li class="hidden m-visible"><a href="basket.html"><i class="icon-basket"></i>Basket</a>
+              </li>
+            </ul>
+          </nav><a href="basket.html" class="basket m-hidden"><em class="count">2</em><i class="icon-basket-small"></i></a>
+        </div>
+      </div>
+    </header>
+    <!--header ends-->
+    <!--main starts-->
+    <div id="main">
+      <!--promo section starts-->
+      <section class="promo-section">
+        <div class="container">
+          <figure class="text-center">
+            <div class="img-holder"><img data-original="images/content/img-book-item-11.png" src="images/none.gif" width="442" height="394" alt="img-description" class="lazy"></div>
+            <figcaption>
+              <h1 class="entry red">The perfect gift of a wondrous story, tailored to a child’s name.</h1>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <!--promo section ends-->
+      <!--features section start-->
+      <section class="features-section">
+        <div class="holder">
+          <div class="container">
+            <form action="#" novalidate data-role="preview-book" class="common-form text-center">
+              <label for="name">Enter child’s first name:</label>
+              <div class="frame">
+                <div class="row">
+                  <input type="text" id="name" data-role="name">
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <ul class="radio-list">
+                      <li>
+                        <input type="radio" id="boy" name="gender-1" data-role="boy">
+                        <label for="boy" class="radio-label">Boy</label>
+                      </li>
+                      <li>
+                        <input type="radio" id="girl" name="gender-1" data-role="girl">
+                        <label for="girl" class="radio-label">Girl</label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col">
+                    <button type="submit" data-role="submit-name" data-letters-limit-max='12' data-letters-limit-min='3' class="btn align-right"><span>Preview book</span></button>
+                  </div>
+                </div>
+                <div class="row hidden"><span data-error="type-1" class="hidden">Please enter the child's first name only (it should be a minimum of 3 characters and a maximum of 12 characters).</span><span data-error="type-2" class="hidden">Please click on either Boy or Girl.</span><span data-error="type-3" class="hidden">Oops, we can't make a book for this name yet as we don't have enough stories for the repeat letters in your child's name.<br>Please try again using just their first name or a shorter version of their name.</span></div>
+              </div>
+            </form>
+            <h2>How our wondrous book works...</h2>
+            <div class="video-container">
+              <div class="video-holder">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/6_EB-IkhX-Y?rel=0&amp;amp;showinfo=0" allowfullscreen></iframe>
+              </div>
+            </div>
+            <ul class="list">
+              <li>
+                <figure class="book-item pull-left">
+                  <div class="frame">
+                    <div class="mobile-mode"><img src="images/content/img-book-item-mobile-1.png" alt="img-description" width="170" height="154" class="lazy book-image-1"><img src="images/content/img-book-item-mobile-2.png" alt="img-description" width="166" height="151" class="lazy book-image-2"></div>
+                    <div class="desktop-mode"><img src="images/content/img-book-item-1.png" alt="img-description" width="397" height="360" class="lazy book-image-1"><img src="images/content/img-book-item-2.png" alt="img-description" width="388" height="353" class="lazy book-image-2"></div>
+                  </div>
+                  <figcaption>
+                    <div class="item-table">
+                      <div class="item-cell">
+                        <p>Our wondrous book is tailored to a child’s name, and has boy and girl versions to suite that special little one in your life.</p>
+                      </div>
+                    </div><i class="icon-butterfly"></i>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure class="book-item pull-right">
+                  <div class="frame">
+                    <div class="mobile-mode"><img data-original="images/content/img-book-item-mobile-3.png" src="images/none.gif" alt="img-description" width="164" height="148" class="lazy book-image-3"><img data-original="images/content/img-book-item-mobile-4.png" src="images/none.gif" alt="img-description" width="134" height="125" class="lazy book-image-4"><img data-original="images/content/img-book-item-mobile-5.png" src="images/none.gif" alt="img-description" width="123" height="113" class="lazy book-image-5"><img data-original="images/content/img-book-item-mobile-6.png" src="images/none.gif" alt="img-description" width="134" height="125" class="lazy book-image-6"><span class="ill-chain"></span></div>
+                    <div class="desktop-mode"><img data-original="images/content/img-book-item-3.png" src="images/none.gif" alt="img-description" width="426" height="384" class="lazy book-image-3"><img data-original="images/content/img-book-item-4.png" src="images/none.gif" alt="img-description" width="344" height="324" class="lazy book-image-4"><img data-original="images/content/img-book-item-5.png" src="images/none.gif" alt="img-description" width="320" height="291" class="lazy book-image-5"><img data-original="images/content/img-book-item-6.png" src="images/none.gif" alt="img-description" width="347" height="325" class="lazy book-image-6"><span class="ill-chain"></span></div>
+                  </div>
+                  <figcaption>
+                    <div class="item-table">
+                      <div class="item-cell">
+                        <p>Our wondrous book uses the letters of your child’s name to show them why they are so special and unique in the world.</p>
+                      </div>
+                    </div><i class="icon-butterfly m-hidden"></i>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure class="book-item pull-left">
+                  <div class="frame">
+                    <div class="mobile-mode"><img data-original="images/content/img-book-item-mobile-7.png" src="images/none.gif" alt="img-description" width="170" height="155" class="lazy book-image-7"><img data-original="images/content/img-book-item-mobile-8.png" src="images/none.gif" alt="img-description" width="179" height="168" class="lazy book-image-8"><img data-original="images/content/img-book-item-mobile-9.png" src="images/none.gif" alt="img-description" width="191" height="179" class="lazy book-image-9"></div>
+                    <div class="desktop-mode"><img data-original="images/content/img-book-item-7.png" src="images/none.gif" alt="img-description" width="399" height="361" class="lazy book-image-7"><img data-original="images/content/img-book-item-8.png" src="images/none.gif" alt="img-description" width="419" height="391" class="lazy book-image-8"><img data-original="images/content/img-book-item-9.png" src="images/none.gif" alt="img-description" width="447" height="420" class="lazy book-image-9"></div>
+                  </div>
+                  <figcaption class="large">
+                    <div class="item-table">
+                      <div class="item-cell">
+                        <p>Along the way, they help a host of colourful characters in different ways, discovering something new about themselves with each interaction…</p>
+                      </div>
+                    </div><i class="icon-butterfly hidden m-visible"></i>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure class="book-item pull-right">
+                  <div class="frame">
+                    <div class="mobile-mode"><img data-original="images/content/img-book-item-mobile-10.png" src="images/none.gif" alt="img-description" width="233" height="214" class="lazy book-image-10"></div>
+                    <div class="desktop-mode"><img data-original="images/content/img-book-item-10.png" src="images/none.gif" alt="img-description" width="545" height="502" class="lazy book-image-10"></div>
+                  </div>
+                  <figcaption>
+                    <div class="item-table">
+                      <div class="item-cell">
+                        <p>Until at the end they realise those same qualities actually spell out their very own name!</p>
+                      </div>
+                    </div>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+            <form action="#" novalidate data-role="preview-book" class="common-form text-center b-indent">
+              <label for="name-1">Enter child’s first name:</label>
+              <div class="frame">
+                <div class="row">
+                  <input type="text" id="name-1" data-role="name">
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <ul class="radio-list">
+                      <li>
+                        <input type="radio" id="boy-1" name="gender-1" data-role="boy">
+                        <label for="boy-1" class="radio-label">Boy</label>
+                      </li>
+                      <li>
+                        <input type="radio" id="girl-1" name="gender-1" data-role="girl">
+                        <label for="girl-1" class="radio-label">Girl</label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col">
+                    <button type="submit" data-role="submit-name" data-letters-limit-max='12' data-letters-limit-min='3' class="btn align-right"><span>Preview book</span></button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div><span class="bg-top"></span><span class="bg-bottom"></span>
+      </section>
+      <!--features section end-->
+      <!--grandparents img box starts-->
+      <div class="img-box"><img data-original="images/content/img-box-placeholder-mobile.png" src="images/none.gif" alt="img-description" width="320" height="249" class="lazy m-hidden"><img data-original="images/content/img-box-placeholder.png" src="images/none.gif" alt="img-description" width="1440" height="581" class="lazy hidden m-visible"></div>
+      <!--grandparents img box ends-->
+      <!--testimonials section start-->
+      <section class="testimonials-section">
+        <div class="container">
+          <h2>Wondrous memories made...</h2>
+          <ul class="list">
+            <li>
+              <blockquote>
+                <q>“Fantastic, very nicely presented, loved the story. High quality printing and also enjoyed by the children!!!”</q>
+                <cite>Dave, for his children</cite>
+              </blockquote>
+            </li>
+            <li>
+              <blockquote class="view-1">
+                <q>“The most beautiful book ever and one my Grandson will treasure for ever”</q>
+                <cite>Trisha, for her grandson</cite>
+              </blockquote>
+            </li>
+            <li>
+              <blockquote class="view-2">
+                <q>“I was really excited for the book to arrive and I was very pleased when it did, the quality is fantastic and the story is so clever”</q>
+                <cite>Julie, for her son</cite>
+              </blockquote>
+            </li>
+          </ul>
+        </div><span class="ill"></span>
+      </section>
+      <!--testimonials section end-->
+      <!--quality section start-->
+      <section class="quality-section">
+        <div class="container">
+          <h2>Wondrous quality...</h2>
+          <div class="holder">
+            <ul class="list">
+              <li>
+                <figure>
+                  <div class="img-holder"><img data-original="images/content/img-quality-1.png" src="images/none.gif" alt="img-description" width="157" height="141" class="lazy"></div>
+                  <figcaption>26cm x 23cm, printed on high quality, thick paper</figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <div class="img-holder"><img data-original="images/content/img-quality-2.png" src="images/none.gif" alt="img-description" width="157" height="141" class="lazy"></div>
+                  <figcaption>Suitable for children from 0 to 8 years old</figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <div class="img-holder"><img data-original="images/content/img-quality-3.png" src="images/none.gif" alt="img-description" width="157" height="150" class="lazy"></div>
+                  <figcaption>Beautifully wrapped and addressed directly to the child</figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <div class="img-holder"><img data-original="images/content/img-quality-4.png" src="images/none.gif" alt="img-description" width="157" height="141" class="lazy"></div>
+                  <figcaption>Custom made, bound and delivered within 14 days</figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--quality section end-->
+    </div>
+    <!--main ends-->
+    <!--footer starts-->
+    <footer id="footer">
+      <div class="frame">
+        <div class="container">
+          <ul class="social-list">
+            <li><a href="#"><i class="icon-social-twitter"></i></a></li>
+            <li><a href="#"><i class="icon-social-pinterest"></i></a></li>
+            <li><a href="#"><i class="icon-social-facebook"></i></a></li>
+          </ul>
+          <nav class="footer-nav">
+            <ul>
+              <li><a href="frequently-asked-questions.html">FAQs</a></li>
+              <li><a href="#">PRESS</a></li>
+              <li><a href="#">NAMES</a></li>
+              <li><a href="#">TERMS</a></li>
+              <li><a href="#">PRIVACY</a></li>
+              <li><a href="#">CONTACT US</a></li>
+              <li class="currency-element">
+                <label for="currency">CURRENCY</label>
+                <div class="select-holder uppend">
+                  <select name="currency" id="currency" data-role="select">
+                    <option value="GBP" selected>GBP</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="CAD">CAD</option>
+                    <option value="AUD">AUD</option>
+                    <option value="NZD">NZD</option>
+                    <option value="HKD">HKD</option>
+                    <option value="SGD">SGD</option>
+                    <option value="KRW">KRW</option>
+                  </select>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <p class="copyright">&copy; Copyright Wondrous Ink Ltd. 2015. All rights reserved. Registered in England. Company number: 8983267. <br /> Registered office: 60a Waldron Road, London SW18 3TD, UK. Contact: <a href="mailto:info@wondrousink.com">info@wondrousink.com</a>.</p>
+        </div>
+      </div>
+    </footer>
+    <!--footer ends-->
+  </div>
+  <!--wrapper ends-->
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: { families: [ 'Cardo:400,700:latin', 'Lato:400,300,700:latin' ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
+  <!--jQuery library-->
+  <!-- build:js js/jquery.min.js-->
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- /build -->
+  <!-- build:remove -->
+  <!--modernizr plugin-->
+  <script src="../bower_components/modernizr/modernizr.js"></script>
+  <!--detectizr plugin-->
+  <script src="../bower_components/detectizr/dist/detectizr.js"></script>
+  <!--fastclick plugin-->
+  <script src="../bower_components/fastclick/lib/fastclick.js"></script>
+  <!--placeholder plugin-->
+  <script src="../bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+  <!--retina plugin-->
+  <script src="../bower_components/retina.js/dist/retina.min.js"></script>
+  <!--imagesLoaded plugin-->
+  <script src="../bower_components/imagesLoaded/imagesLoaded.pkgd.min.js"></script>
+  <!--jquery lazyload plugin-->
+  <script src="../bower_components/jquery_lazyload/jquery.lazyload.js"></script>
+  <!-- /build -->
+  <!-- build:template
+  <% if (environment === 'markup') { %>
+  <script src="js/plugins/modernizr.min.js"></script>
+  <script src="js/plugins/detectizr.min.js"></script>
+  <script src="js/plugins/fastclick.min.js"></script>
+  <script src="js/plugins/jquery.placeholder.min.js"></script>
+  <script src="js/plugins/retina.min.js"></script>
+  <script src="js/plugins/imagesLoaded.pkgd.min.js"></script>
+  <script src="js/plugins/jquery.lazyload.js"></script>
+  <% } %>
+  /build -->
+  <!-- build:remove:build -->
+  <!--include plugins-->
+  <script src="js/jquery.form-validator.js"></script>
+  <script src="js/jquery.show-error.js"></script>
+  <script src="js/jquery.ajax-setup.js"></script>
+  <script src="js/jquery.buy.js"></script>
+  <script src="js/experiments.js"></script>
+  <!--init plugins-->
+  <script src="js/jquery.utilities.js"></script>
+  <script src="js/jquery.common.js"></script>
+  <!-- /build -->
+  <!-- build:template
+  <% if (environment === 'build') { %>
+  <script src="js/wondrous-ink.min.js"></script>
+  <% } %>
+  /build -->
+  
+</body>
+</html>

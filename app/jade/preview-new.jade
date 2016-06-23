@@ -1,0 +1,206 @@
+extends modules/layout
+block title
+  - title = 'Preview New';
+  - newPreview = true;
+block body
+  body.new-preview
+    //wrapper starts
+    #wrapper(data-loader-hidden)
+      include modules/header
+      //main starts
+      #main
+        include modules/visual
+        //preview info starts
+        section.preview-info.up-cloud
+          .container
+            h1.title Over 30,000 children made happy!
+          .scroll-gallery
+            a.btn-prev(href="#") Prev
+            .holder
+              ul.slider
+                li
+                  .img-holder
+                    img.lazy(data-original="images/content/img-scroll-gallery-1.jpg" src="images/none.gif", width="179" height="242" alt="img-description")
+                li
+                  .img-holder
+                    img.lazy(data-original="images/content/img-scroll-gallery-2.jpg" src="images/none.gif", width="239" height="174" alt="img-description")
+                li
+                  .img-holder
+                    img.lazy(data-original="images/content/img-scroll-gallery-3.jpg" src="images/none.gif", width="242" height="180" alt="img-description")
+                li
+                  .img-holder
+                    img.lazy(data-original="images/content/img-scroll-gallery-4.jpg" src="images/none.gif", width="242" height="180" alt="img-description")
+                li
+                  .img-holder
+                    img.lazy(data-original="images/content/img-scroll-gallery-1.jpg" src="images/none.gif", width="179" height="242" alt="img-description")
+                li
+                  .img-holder
+                    img.lazy(data-original="images/content/img-scroll-gallery-2.jpg" src="images/none.gif", width="239" height="174" alt="img-description")
+                li
+                  .img-holder
+                    img.lazy(data-original="images/content/img-scroll-gallery-3.jpg" src="images/none.gif", width="242" height="180" alt="img-description")
+                li
+                  .img-holder
+                    img.lazy(data-original="images/content/img-scroll-gallery-4.jpg" src="images/none.gif", width="242" height="180" alt="img-description")
+            a.btn-next(href="#") Next
+          .container
+            h1.title What makes our book so special?
+            ul.features-list
+              li
+                figure
+                  .img-holder
+                    img.lazy(data-original="images/content/img-features-list-1.png", src="images/none.gif", alt="img-description", width="82", height="73")
+                  figcaption Enhances reading skills, stimulate imagination
+              li
+                figure
+                  .img-holder
+                    img.lazy(data-original="images/content/img-features-list-2.png", src="images/none.gif", alt="img-description", width="82", height="73")
+                  figcaption Suitable for<br> 0 to 8 years old
+              li
+                figure
+                  .img-holder
+                    img.lazy(data-original="images/content/img-features-list-3.png", src="images/none.gif", alt="img-description", width="82", height="73")
+                  figcaption Wide landscape format - 10x9”
+              li
+                figure
+                  .img-holder
+                    img.lazy(data-original="images/content/img-features-list-4.png", src="images/none.gif", alt="img-description", width="82", height="73")
+                  figcaption Printed on thick, high quality paper
+              li
+                figure
+                  .img-holder
+                    img.lazy(data-original="images/content/img-features-list-5.png", src="images/none.gif", alt="img-description", width="82", height="73")
+                  figcaption Bound with the strongest glue for durability
+              li
+                figure
+                  .img-holder
+                    img.lazy(data-original="images/content/img-features-list-6.png", src="images/none.gif", alt="img-description", width="82", height="73")
+                  figcaption Delivered worldwide within 14 days
+            .special-offer
+              .box
+                h2 Buy now to receive by the 21st October
+                button.btn.full-width(type="button")
+                  span Buy for £19.99
+                .btn-holder
+                  a(href="#lightbox").open-fancybox Save on multiple books
+              | Not ready to buy yet? - <a href="#event-lightbox" class="open-fancybox">Save for later</a>
+        //preview info ends
+      //main ends
+      include modules/footer
+      span.ill-body
+        img.lazy(data-original="images/backgrounds/bg-body.jpg", src="images/none.gif", alt="img-description", width="1440", height="863")
+    #lightbox.lightbox
+      header.heading
+        h3 Discount on multiple books
+      table
+        tr
+          td.cell-1 1st book
+          td.price £19.99
+        tr
+          td.cell-1 2nd book
+          td.price £17.99
+          td.red 10% off
+        tr
+          td.cell-1 3rd book
+          td.price £15.99
+          td.red 20% off
+        tr
+          td.cell-1 4th book
+          td.price £13.99
+          td.red 30% off
+        tr
+          td.cell-1 5th  book+
+          td.price £11.99
+          td.red 40% off
+    #event-lightbox.lightbox
+      header.heading
+        h3 Remind me later
+      form(action="#", data-ajax="true" novalidate).data-form
+        .form-control
+          label(for="email") Your email:
+          input(type="email" id="email" data-valid data-type-required)
+        .form-control
+          label(for="date") Event date:
+          input(type="text" id="date" data-type-required).datepicker
+        p We'll remind you 2 weeks before this date.
+        button.btn(type="submit").open-link
+          span Set reminder
+    #welcome-lightbox.lightbox
+      header.heading
+        h3 Thanks
+      h4 Your remind has been sent
+      a.btn.full-width.close-popup(href="#")
+        span Close
+    //wrapper ends
+    script(type='text/javascript').
+      WebFontConfig = {
+        google: { families: [ 'Cardo:400,700:latin', 'Lato:400,300,700:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    //jQuery library
+    // build:js js/jquery.min.js
+    script(src="../bower_components/jquery/dist/jquery.min.js")
+    // /build 
+    // build:remove 
+    block bowerScripts
+      //modernizr plugin
+      script(src="../bower_components/modernizr/modernizr.js")
+      //detectizr plugin
+      script(src="../bower_components/detectizr/dist/detectizr.js")
+      //fastclick plugin
+      script(src="../bower_components/fastclick/lib/fastclick.js")
+      //placeholder plugin
+      script(src="../bower_components/jquery-placeholder/jquery.placeholder.js")
+      //hammer plugin
+      script(src="../bower_components/hammerjs/hammer.min.js")
+      script(src="../bower_components/jquery-hammerjs/jquery.hammer.js")
+      //retina plugin
+      script(src="../bower_components/retina.js/dist/retina.min.js")
+      //fancybox plugin
+      script(src="../bower_components/fancybox/source/jquery.fancybox.js")
+      //jquery ui plugin
+      script(src="../bower_components/jquery-ui/jquery-ui.js")
+      script(src="../bower_components/jquery-ui/ui/datepicker.js")
+      //imagesLoaded plugin
+      script(src="../bower_components/imagesLoaded/imagesLoaded.pkgd.min.js")
+      //jquery lazyload plugin
+      script(src="../bower_components/jquery_lazyload/jquery.lazyload.js")
+    // /build 
+    +replaceTpl('markup')
+      block markupScripts
+        script(src="js/plugins/modernizr.min.js")
+        script(src="js/plugins/detectizr.min.js")
+        script(src="js/plugins/fastclick.min.js")
+        script(src="js/plugins/jquery.placeholder.min.js")
+        script(src="js/plugins/hammer.min.js")
+        script(src="js/plugins/jquery.hammer.min.js")
+        script(src="js/plugins/retina.min.js")
+        script(src="js/plugins/jquery.fancybox.pack.min.js")
+        script(src="js/plugins/imagesLoaded.pkgd.min.js")
+        script(src="js/plugins/jquery.lazyload.js")
+    // build:remove:build 
+    //include plugins
+    block pluginsScripts
+      script(src="js/jquery.form-validator.js")
+      script(src="js/jquery.carousel.js")
+      script(src="js/jquery.form-validator.js")
+      script(src="js/jquery.show-error.js")
+      script(src="js/jquery.ajax-setup.js")
+      script(src="js/jquery.buy.js")
+      script(src="js/experiments.js")
+    //init plugins
+    block initScripts
+      script(src="js/jquery.init-book-gallery.js")
+      script(src="js/jquery.utilities.js")
+      script(src="js/jquery.common.js")
+    // /build 
+    +replaceTpl('build')
+      script(src="js/wondrous-ink.min.js")
+    = "\n\r  "

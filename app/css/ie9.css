@@ -1,0 +1,93 @@
+.loader,
+.preview-message-section:after,
+.preview-message-section .holder
+.preview-info:before,
+.feaures-section .bg-top,
+.feaures-section .bg-bottom,
+.steps-list li.active .item,
+.selectArea,
+.btn {
+  filter: none;
+}
+
+.visual .loader {
+  display: none;
+}
+
+@media only screen and (min-width: 767px) {
+  .at-front-cover.visual .mask {
+    margin: 0 150px 0 -150px;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .at-front-cover.visual .mask {
+    height: 446px;
+    margin: 0 253px 0 -253px;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .new-preview .at-front-cover.visual .mask {
+    margin: 0 213px 0 -213px;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .new-preview .at-rear-cover.visual .mask {
+    margin: 0 -213px 0 213px;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .visual .pager {
+    padding-top: 3px;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .at-front-cover.visual .next.btn {
+    right: 276px;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .new-preview .at-front-cover.visual .next.btn {
+    right: 286px;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .new-preview .at-rear-cover.visual .prev.btn {
+    left: 286px;
+  }
+}
+
+.default-blue .selectArea .center > span {
+  position: relative;
+  z-index: -1;
+}
+
+.default-blue .selectArea.selectAreaActive .center {
+  position: relative;
+  z-index: 1;
+}
+
+@media only screen and (min-width: 960px) {
+  input.small[type="password"],
+  input.small[type="text"] {
+    line-height: 30px;
+  }
+}
+
+.promo-section {
+  background: url('../images/backgrounds/bg-promo.jpg?1463035401') no-repeat;
+  background-size: cover;
+}
+@media only screen and (min-width: 480px) {
+  .promo-section {
+    background: url('../images/backgrounds/bg-promo.jpg?1463035401') no-repeat;
+    background-size: cover;
+  }
+}

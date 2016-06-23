@@ -1,0 +1,74 @@
+nav,
+header,
+footer,
+section,
+article,
+figure {display: block;}
+html,
+body {height: 100%;}
+body {
+	-webkit-text-size-adjust: 100%;
+	background: $blue-light;
+	color: $blue-dark;
+	font: #{$tiny-font-size}/#{$base-line-height} $base-font-family;
+	margin: 0;
+	min-width: 320px;
+	&.home {background-image: none;}
+	&.loading {
+		left: 0;
+		overflow-y: scroll;
+		position: fixed;
+		right: 0;
+		top: 0;
+	}
+	&.light-scheme {
+		background-color: #dbeffa;
+		@media only screen and (min-width: $l-breakpoint) {background-color: $blue-light;}
+	}
+	&.white-scheme {
+		#wrapper {background: $white;}
+	}
+}
+a {
+	color: $gray-dark;
+	text-decoration: underline;
+}
+a:hover {text-decoration: none;}
+q {quotes: none;}
+q:before,
+q:after {content: "";}
+img {border: none;}
+form,
+fieldset {
+	border-style: none;
+	margin: 0;
+	padding: 0;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+textarea {color: $gray-dark;}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="submit"],
+textarea {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	font: $base-font-size $base-font-family;
+	vertical-align: middle;
+}
+button::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+audio,
+canvas,
+video {display: inline-block;}
+figure {
+	margin: 0;
+	padding: 0;
+}

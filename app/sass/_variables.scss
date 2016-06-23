@@ -1,0 +1,80 @@
+// font family variables start
+$base-font-family:                  'Cardo', 'Times New Roman', Times, serif;
+$add-font-family:                   'Take Out The Garbage', Arial, Helvetica, sans-serif;
+$arial-font-family:                  Arial, Helvetica, sans-serif;
+$lato-font-family:                  'Lato', Arial, Helvetica, sans-serif;
+// font family variables end
+
+// font size variables start
+$tiny-font-size:                    18px;
+$smaller-font-size:                 20px;
+$small-font-size:                   23px;
+$base-font-size:                    30px;
+
+$big-font-size:                     33px;
+$bigger-font-size:                  38px;
+$biggest-font-size:                 50px;
+$large-font-size:                   58px;
+$max-font-size:                     65px;
+// font size variables end
+
+// line height variables start
+$small-line-height:                 15px;
+$base-line-height:                  20px;
+$large-line-height:                 23px;
+// line height variables end
+
+// buttons line height variables start
+$small-btn-line-height:             36px;
+$middle-btn-line-height:            42px;
+$base-btn-line-height:              69px;
+$large-btn-line-height:             45px;
+$max-btn-line-height:               64px;
+// buttons line height variables end
+
+// border radius variables start
+$small-border-radius:               3px;
+$base-border-radius:                5px;
+$large-border-radius:               8px;
+// border radius variables end
+
+// colors variables start
+
+$blue-light:                        #58c3ff;
+$gray:                              #aaa;
+$gray-darker:                       #222;
+$gray-lighter:                      #bcbdbd;
+$gray-lightest:                     #eee;
+$gray-middle:                       #626262;
+$orange:                            #ec5c15;
+$pink:                              #ff646f;
+
+$black:                             #000;
+$blue-dark:                         #1a5383;
+$blue-light:                        #e6eff6;
+$blue:                              #39a4ff;
+$dark-red:                          #8a2116;
+$gray-light:                        #6d6e71;
+$gray-dark:                         #636363;
+$green:                             #63a588;
+$light-yellow:                      #fff9e5;
+$red-middle:                        #c2352f;
+$red:                               #cb1c00;
+$white:                             #fff;
+$yellow:                            #d7e066;
+// colors variables end
+
+// other variables start
+$base-bottom-indent:                20px;
+$base-side-indent:                  19px;
+$sprite-size:                       1000px 1000px;
+$max-width:                         1280px;
+// other variables end
+
+// breakpoints start
+$xs-breakpoint: 480px;
+$sm-breakpoint: 640px;
+$m-breakpoint:  768px;
+$l-breakpoint:  960px;
+$xl-breakpoint: 1200px;
+// breakpoints end

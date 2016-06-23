@@ -1,0 +1,43 @@
+mixin ie(condition)
+  | <!--[!{condition}]>
+  block
+  = "\n\r  "
+  | <![endif]-->
+
+mixin replaceTpl(environment)
+  != "\n\r  <!-- build:template"
+  != "\n\r  <% if (environment === '" + environment + "') { %>"
+  block
+  != "\n\r  <% } %>"
+  != "\n\r  /build -->"
+
+mixin ieTpl
+  != "\n\r  <!-- build:template"
+  != "\n\r  <%= ie %>"
+  != "\n\r  /build -->"
+
+mixin navmenu(menu_items)
+  nav#nav(data-add-class-parent)
+    a.opener.m-hidden(href="#", data-add-class)
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    ul
+      each top_item in menu_items
+        - var itematts = { 'class': top_item.class}
+        li()&attributes(itematts)
+          +navlinks(top_item)
+          if top_item.child
+            ul
+              each child_item in top_item.child
+                - itematts = { 'class': child_item.class }
+                li&attributes(itematts)
+                  +navlinks(child_item)
+
+mixin navlinks(item)
+  - var linkatts = { 'href': item.link}
+  - var icoatts = { 'class': item.iconClass }
+  a()&attributes(linkatts)
+    if item.iconClass
+      i()&attributes(icoatts)
+    = item.title

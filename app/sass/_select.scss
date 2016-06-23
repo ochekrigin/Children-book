@@ -1,0 +1,147 @@
+.select-holder {
+    position: relative;
+    text-align: left;
+}
+.select-holder {
+    @include border-radius($small-border-radius);
+    @include box-shadow(3px 2px 0 0 rgba($gray-dark, .25));
+    @include box-sizing(border-box);
+    @include background-image(linear-gradient(top, #1c5281 0%,#0f395d 100%));
+    background-color: #1c5281;
+    $experimental-support-for-svg: true;
+    height: 32px;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    z-index: 10;
+    @media only screen and (min-width: $m-breakpoint) {
+        @include box-shadow(4px 3px 0 0 rgba($gray-dark, .25));
+        @include border-radius($base-border-radius);
+        height: 44px;
+    }
+    /* input style start */
+    &.input-style {
+        @include box-shadow(inset 1px 1px 1px rgba($black, .25));
+        @include border-radius($small-border-radius);
+        border: 1px solid $blue;
+        background: $white;
+        color: $black;
+        height: 29px;
+        margin: 0 0 10px;
+        @media only screen and (min-width: $m-breakpoint) {
+            @include border-radius($base-border-radius);
+            @include box-shadow(inset 1px 2px 2px rgba($black, .25));
+            height: 41px;
+            margin: 0 0 12px;
+        }
+        &:before {display: none;}
+        &:after {
+            @extend .icon-arrow-down-blue;
+            right: 12px;
+            top: 11px;
+            @media only screen and (min-width: $m-breakpoint) {
+                right: 13px;
+                top: 17px;
+            }
+        }
+        select {
+            color: $black;
+            font: 700 11px $lato-font-family;
+            padding: 6px 5px;
+            @media only screen and (min-width: $m-breakpoint) {
+                @include box-shadow(none);
+                font-size: $tiny-font-size - 1px;
+                padding: 9px 12px 7px;
+            }
+        }
+        option {
+            background: $white;
+            color: $black;
+            padding-left: 7px;
+            @media only screen and (min-width: $m-breakpoint) {
+                padding-left: 14px;
+            }
+        }
+        &:hover {
+            .is-desktop & {
+                background: $white;
+            }
+        }
+    }
+    /* input style end */
+    &:before {
+        @include border-radius(1px);
+        border: 1px dashed $white;
+        bottom: 2px;
+        content: '';
+        left: 2px;
+        position: absolute;
+        right: 2px;
+        top: 2px;
+        @media only screen and (min-width: $m-breakpoint) {
+            @include border-radius($small-border-radius - 1px);
+            bottom: 3px;
+            left: 3px;
+            right: 3px;
+            top: 3px;
+
+        }
+    }
+    &:after {
+        @extend .icon-arrow-down;
+        content: '';
+        overflow: hidden;
+        position: absolute;
+        right: 11px;
+        top: 13px;
+        @media only screen and (min-width: $m-breakpoint) {
+            right: 16px;
+            top: 18px;
+        }
+    }
+    &:hover {
+        .is-desktop & {
+            background-color: #216096;
+            $experimental-support-for-svg: true;
+            @include background-image(linear-gradient(top, #216096 0%, #1c5381 100%));
+        }
+    }
+    &.uppend {
+        &:after {
+            @include transform(rotate(180deg));
+        }
+    }
+    select {
+        @include ellipsis;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        border: none;
+        color: $white;
+        font: 17px $add-font-family;
+        cursor: pointer;
+        margin: 0;
+        outline: none;
+        padding: 1px 30px 5px 10px;
+        position: relative;
+        width: 100%;
+        z-index: 10;
+        &::-ms-expand {display: none;}
+        @media only screen and (min-width: $m-breakpoint) {
+            font-size: 25px;
+            padding: 1px 44px 7px 16px;
+        }
+    }
+    option {
+        background-color: #0f395d;
+        color: $white;
+        font-weight: 700;
+        font-family: $lato-font-family;
+        padding: 0 0 0 11px;
+        @media only screen and (min-width: $m-breakpoint) {
+            padding-left: 18px;
+        }
+    }
+}

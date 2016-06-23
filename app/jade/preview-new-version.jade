@@ -1,0 +1,177 @@
+extends modules/layout
+block title
+  - title = 'Preview';
+block body
+  body.preview.loading
+    //wrapper starts
+    #wrapper
+      include modules/header
+      //main starts
+      #main
+        include modules/visual
+        //preview info starts
+        section.preview-info.bigger-bg
+          .container
+            .holder
+              h2 The Wondrous World of Sally Smith.
+              .special-offer
+                .img-holder
+                  img.lazy(data-original="images/content/img-special-offer-1.png" src="images/none.gif" width="109" height="102" alt="img-description")
+                strong.title
+                  span.uppercase.blue SEPTEMBER SAVER 
+                  | - Up to 40% off 
+                | on multiple books - 
+                a(href="#lightbox").open-fancybox see discounts
+              .price
+                span.old-price £19.99
+                span.new-price £17.99
+                em (10% off)
+                .select-holder.default-blue
+                  select(name="currency", data-role="select", data-placeholder="Change currency")
+                    option(value="GBP") GBP
+                    option(value="USD") USD
+                    option(value="EUR") EUR
+                    option(value="CAD") CAD
+                    option(value="AUD") AUD
+                    option(value="NZD") NZD
+                    option(value="HKD") HKD
+                    option(value="SGD") SGD
+                    option(value="KRW") KRW
+              p Beautifully hand-illustrated and printed on thick, high quality paper. Suitable for 2 to 8 year olds, or makes a great keepsake for newborns. You can also add a unique message inside the front cover on the next page...
+              ul.action-list
+                li
+                  a.btn.full-width(href="#")
+                    span Get your unique book
+                li
+                  span.or or
+                li
+                  a(href="#").big-text.blue Save for later
+                  em.note Set a reminder, for an upcoming date such as a child, grandchild or nephew's birthday.
+        //preview info ends
+        //testimonials section start
+        section.testimonials-section.alt
+          .container
+            h2 Wondrous memories made...
+            ul.list
+              li
+                blockquote
+                  q “Fantastic, very nicely presented, loved the story. High quality printing and also enjoyed by the children!!!”
+                  cite Dave, for his children
+              li
+                blockquote.view-1
+                  q “The most beautiful book ever and one my Grandson will treasure for ever”
+                  cite Trisha, for her grandson
+              li
+                blockquote.view-2
+                  q “I was really excited for the book to arrive and I was very pleased when it did, the quality is fantastic and the story is so clever”
+                  cite Julie, for her son
+          span.ill
+        //testimonials section end
+        section.preview-info.up-cloud
+          .container
+            .holder
+              h2.accessibility Preview info
+              ul.action-list
+                li
+                  a.btn.full-width(href="#")
+                    span Purchase this book
+                li
+                  span.or or
+                li
+                  a.btn.full-width.blue(href="#")
+                    span Save for later
+                  em.note Set a reminder, for an upcoming date such as a child, grandchild or nephew's birthday.
+      //main ends
+      include modules/footer
+      span.ill-body
+        img.lazy(data-original="images/backgrounds/bg-body.jpg", src="images/none.gif", alt="img-description", width="1440", height="863")
+    #lightbox.lightbox
+      header.heading
+        h3 Discount on multiple books
+      table
+        tr
+          td.cell-1 1st book
+          td.price £19.99
+        tr
+          td.cell-1 2nd book
+          td.price £17.99
+          td.red 10% off
+        tr
+          td.cell-1 3rd book
+          td.price £15.99
+          td.red 20% off
+        tr
+          td.cell-1 4th book
+          td.price £13.99
+          td.red 30% off
+        tr
+          td.cell-1 5th  book+
+          td.price £11.99
+          td.red 40% off
+    //wrapper ends
+    script(type='text/javascript').
+      WebFontConfig = {
+        google: { families: [ 'Cardo:400,700:latin', 'Lato:400,300,700:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    //jQuery library
+    // build:js js/jquery.min.js
+    script(src="../bower_components/jquery/dist/jquery.min.js")
+    // /build 
+    // build:remove 
+    block bowerScripts
+      //modernizr plugin
+      script(src="../bower_components/modernizr/modernizr.js")
+      //detectizr plugin
+      script(src="../bower_components/detectizr/dist/detectizr.js")
+      //fastclick plugin
+      script(src="../bower_components/fastclick/lib/fastclick.js")
+      //placeholder plugin
+      script(src="../bower_components/jquery-placeholder/jquery.placeholder.js")
+      //hammer plugin
+      script(src="../bower_components/hammerjs/hammer.min.js")
+      script(src="../bower_components/jquery-hammerjs/jquery.hammer.js")
+      //retina plugin
+      script(src="../bower_components/retina.js/dist/retina.min.js")
+      //fancybox plugin
+      script(src="../bower_components/fancybox/source/jquery.fancybox.js")
+      //imagesLoaded plugin
+      script(src="../bower_components/imagesLoaded/imagesLoaded.pkgd.min.js")
+      //jquery lazyload plugin
+      script(src="../bower_components/jquery_lazyload/jquery.lazyload.js")
+    // /build 
+    +replaceTpl('markup')
+      block markupScripts
+        script(src="js/plugins/modernizr.min.js")
+        script(src="js/plugins/detectizr.min.js")
+        script(src="js/plugins/fastclick.min.js")
+        script(src="js/plugins/jquery.placeholder.min.js")
+        script(src="js/plugins/hammer.min.js")
+        script(src="js/plugins/jquery.hammer.min.js")
+        script(src="js/plugins/retina.min.js")
+        script(src="js/plugins/jquery.fancybox.pack.min.js")
+        script(src="js/plugins/imagesLoaded.pkgd.min.js")
+        script(src="js/plugins/jquery.lazyload.js")
+    // build:remove:build 
+    //include plugins
+    block pluginsScripts
+      script(src="js/jquery.form-validator.js")
+      script(src="js/jquery.ajax-setup.js")
+      script(src="js/jquery.buy.js")
+      script(src="js/experiments.js")
+    //init plugins
+    block initScripts
+      script(src="js/jquery.utilities.js")
+      script(src="js/jquery.common.js")
+      script(src="js/jquery.init-book-gallery.js")
+    // /build 
+    +replaceTpl('build')
+      script(src="js/wondrous-ink.min.js")
+    = "\n\r  "

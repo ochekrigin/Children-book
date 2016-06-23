@@ -1,0 +1,260 @@
+extends modules/layout
+block body
+  body.home
+    //wrapper starts
+    #wrapper.with-cover.blue.new-home.new-header
+      include modules/header
+      //main starts
+      #main
+        //promo section starts
+        section.promo-section
+          .container
+            figure
+              .img-holder
+                img.lazy(data-original="images/content/img-book-item-12.png" src="images/none.gif" width="372" height="350" alt="img-description")
+              figcaption
+                h1.entry.red.text-center A fun and beautiful Personalised Book
+                form.common-form.text-center(action="#", novalidate, data-role="preview-book")
+                  label(for="name-in-promo") Create your own book here:
+                  .frame
+                    .row
+                      .box
+                        input(type="text", id="name-in-promo", data-role="name" placeholder="Enter the child’s name").small
+                        ul.radio-list.small-size
+                          li
+                            input(type="radio", id="promo-boy", name="gender-1", data-role="boy")
+                            label.radio-label(for="promo-boy") Boy
+                          li
+                            input(type="radio", id="promo-girl", name="gender-1", data-role="girl")
+                            label.radio-label(for="promo-girl") Girl
+                    .row
+                      button.btn(type="submit", data-role="submit-name", data-letters-limit-max=12, data-letters-limit-min=3)
+                        span Preview my book
+                    .row.hidden
+                      span.hidden(data-error="type-1") Please enter the child's first name only (it should be a minimum of 3 characters and a maximum of 12 characters).
+                      span.hidden(data-error="type-2") Please click on either Boy or Girl.
+                      span.hidden(data-error="type-3") Oops, we can't make a book for this name yet as we don't have enough stories for the repeat letters in your child's name.<br>Please try again using just their first name or a shorter version of their name.
+        //promo section ends
+        //features section start
+        section.features-section
+          .holder
+            .container
+              form.common-form.text-center(action="#", novalidate, data-role="preview-book")
+                label(for="name") Enter child’s first name:
+                .frame
+                  .row
+                    input(type="text", id="name", data-role="name")
+                  .row
+                    .col
+                      ul.radio-list
+                        li
+                          input(type="radio", id="boy", name="gender-1", data-role="boy")
+                          label.radio-label(for="boy") Boy
+                        li
+                          input(type="radio", id="girl", name="gender-1", data-role="girl")
+                          label.radio-label(for="girl") Girl
+                    .col
+                      button.btn.align-right(type="submit", data-role="submit-name", data-letters-limit-max=12, data-letters-limit-min=3)
+                        span Preview book
+                  .row.hidden
+                    span.hidden(data-error="type-1") Please enter the child's first name only (it should be a minimum of 3 characters and a maximum of 12 characters).
+                    span.hidden(data-error="type-2") Please click on either Boy or Girl.
+                    span.hidden(data-error="type-3") Oops, we can't make a book for this name yet as we don't have enough stories for the repeat letters in your child's name.<br>Please try again using just their first name or a shorter version of their name.
+              h2 How our wondrous book works...
+              .video-container
+                .video-holder
+                  iframe(width="560", height="315", src="https://www.youtube.com/embed/6_EB-IkhX-Y?rel=0&amp;showinfo=0", allowfullscreen)
+              ul.list
+                li
+                  figure.book-item.pull-left
+                    .frame
+                      .mobile-mode
+                        img.lazy.book-image-1(data-original="images/content/img-book-item-mobile-1.png", src="images/none.gif", alt="img-description", width="170", height="154")
+                        img.lazy.book-image-2(data-original="images/content/img-book-item-mobile-2.png", src="images/none.gif", alt="img-description", width="166", height="151")
+                      .desktop-mode
+                        img.lazy.book-image-1(data-original="images/content/img-book-item-1.png", src="images/none.gif", alt="img-description", width="397", height="360")
+                        img.lazy.book-image-2(data-original="images/content/img-book-item-2.png", src="images/none.gif", alt="img-description", width="388", height="353")
+                    figcaption
+                      .item-table
+                        .item-cell
+                          p Our wondrous book is tailored to a child’s name, and has boy and girl versions to suite that special little one in your life.
+                      i.icon-butterfly
+                li
+                  figure.book-item.pull-right
+                    .frame
+                      .mobile-mode
+                        img.lazy.book-image-3(data-original="images/content/img-book-item-mobile-3.png", src="images/none.gif", alt="img-description", width="164", height="148")
+                        img.lazy.book-image-4(data-original="images/content/img-book-item-mobile-4.png", src="images/none.gif", alt="img-description", width="134", height="125")
+                        img.lazy.book-image-5(data-original="images/content/img-book-item-mobile-5.png", src="images/none.gif", alt="img-description", width="123", height="113")
+                        img.lazy.book-image-6(data-original="images/content/img-book-item-mobile-6.png", src="images/none.gif", alt="img-description", width="134", height="125")
+                        span.ill-chain
+                      .desktop-mode
+                        img.lazy.book-image-3(data-original="images/content/img-book-item-3.png", src="images/none.gif", alt="img-description", width="426", height="384")
+                        img.lazy.book-image-4(data-original="images/content/img-book-item-4.png", src="images/none.gif", alt="img-description", width="344", height="324")
+                        img.lazy.book-image-5(data-original="images/content/img-book-item-5.png", src="images/none.gif", alt="img-description", width="320", height="291")
+                        img.lazy.book-image-6(data-original="images/content/img-book-item-6.png", src="images/none.gif", alt="img-description", width="347", height="325")
+                        span.ill-chain
+                    figcaption
+                      .item-table
+                        .item-cell
+                          p Our wondrous book uses the letters of your child’s name to show them why they are so special and unique in the world.
+                      i.icon-butterfly.m-hidden
+                li
+                  figure.book-item.pull-left
+                    .frame
+                      .mobile-mode
+                        img.lazy.book-image-7(data-original="images/content/img-book-item-mobile-7.png", src="images/none.gif", alt="img-description", width="170", height="155")
+                        img.lazy.book-image-8(data-original="images/content/img-book-item-mobile-8.png", src="images/none.gif", alt="img-description", width="179", height="168")
+                        img.lazy.book-image-9(data-original="images/content/img-book-item-mobile-9.png", src="images/none.gif", alt="img-description", width="191", height="179")
+                      .desktop-mode
+                        img.lazy.book-image-7(data-original="images/content/img-book-item-7.png", src="images/none.gif", alt="img-description", width="399", height="361")
+                        img.lazy.book-image-8(data-original="images/content/img-book-item-8.png", src="images/none.gif", alt="img-description", width="419", height="391")
+                        img.lazy.book-image-9(data-original="images/content/img-book-item-9.png", src="images/none.gif", alt="img-description", width="447", height="420")
+                    figcaption.large
+                      .item-table
+                        .item-cell
+                          p Along the way, they help a host of colourful characters in different ways, discovering something new about themselves with each interaction…
+                      i.icon-butterfly.hidden.m-visible
+                li
+                  figure.book-item.pull-right
+                    .frame
+                      .mobile-mode
+                        img.lazy.book-image-10(data-original="images/content/img-book-item-mobile-10.png", src="images/none.gif", alt="img-description", width="233", height="214")
+                      .desktop-mode
+                        img.lazy.book-image-10(data-original="images/content/img-book-item-10.png", src="images/none.gif", alt="img-description", width="545", height="502")
+                    figcaption
+                      .item-table
+                        .item-cell
+                          p Until at the end they realise those same qualities actually spell out their very own name!
+              form.common-form.text-center.b-indent(action="#", novalidate, data-role="preview-book")
+                label(for="name-1") Enter child’s first name:
+                .frame
+                  .row
+                    input(type="text", id="name-1", data-role="name")
+                  .row
+                    .col
+                      ul.radio-list
+                        li
+                          input(type="radio", id="boy-1", name="gender-1", data-role="boy")
+                          label.radio-label(for="boy-1") Boy
+                        li
+                          input(type="radio", id="girl-1", name="gender-1", data-role="girl")
+                          label.radio-label(for="girl-1") Girl
+                    .col
+                      button.btn.align-right(type="submit", data-role="submit-name", data-letters-limit-max=12, data-letters-limit-min=3)
+                        span Preview book
+          span.bg-top
+          span.bg-bottom
+        //features section end
+        //grandparents img box starts
+        .img-box
+          img.lazy.m-hidden(data-original="images/content/img-box-placeholder-mobile.png", src="images/none.gif", alt="img-description", width="320", height="249")
+          img.lazy.hidden.m-visible(data-original="images/content/img-box-placeholder.png", src="images/none.gif", alt="img-description", width="1440", height="581")
+        //grandparents img box ends
+        //testimonials section start
+        section.testimonials-section
+          .container
+            h2 Wondrous memories made...
+            ul.list
+              li
+                blockquote
+                  q “Fantastic, very nicely presented, loved the story. High quality printing and also enjoyed by the children!!!”
+                  cite Dave, for his children
+              li
+                blockquote.view-1
+                  q “The most beautiful book ever and one my Grandson will treasure for ever”
+                  cite Trisha, for her grandson
+              li
+                blockquote.view-2
+                  q “I was really excited for the book to arrive and I was very pleased when it did, the quality is fantastic and the story is so clever”
+                  cite Julie, for her son
+          span.ill
+        //testimonials section end
+        //quality section start
+        section.quality-section
+          .container
+            h2 Wondrous quality...
+            .holder
+              ul.list
+                li
+                  figure
+                    .img-holder
+                      img.lazy(data-original="images/content/img-quality-1.png", src="images/none.gif", alt="img-description", width="157", height="141")
+                    figcaption 26cm x 23cm, printed on high quality, thick paper
+                li
+                  figure
+                    .img-holder
+                      img.lazy(data-original="images/content/img-quality-2.png", src="images/none.gif", alt="img-description", width="157", height="141")
+                    figcaption Suitable for children from 0 to 8 years old
+                li
+                  figure
+                    .img-holder
+                      img.lazy(data-original="images/content/img-quality-3.png", src="images/none.gif", alt="img-description", width="157", height="150")
+                    figcaption Beautifully wrapped and addressed directly to the child
+                li
+                  figure
+                    .img-holder
+                      img.lazy(data-original="images/content/img-quality-4.png", src="images/none.gif", alt="img-description", width="157", height="141")
+                    figcaption Custom made, bound and delivered within 14 days
+        //quality section end
+      //main ends
+      include modules/footer
+    //wrapper ends
+    script(type='text/javascript').
+      WebFontConfig = {
+        google: { families: [ 'Cardo:400,700:latin', 'Lato:400,300,700:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    //jQuery library
+    // build:js js/jquery.min.js
+    script(src="../bower_components/jquery/dist/jquery.min.js")
+    // /build 
+    // build:remove 
+    block bowerScripts
+      //modernizr plugin
+      script(src="../bower_components/modernizr/modernizr.js")
+      //detectizr plugin
+      script(src="../bower_components/detectizr/dist/detectizr.js")
+      //fastclick plugin
+      script(src="../bower_components/fastclick/lib/fastclick.js")
+      //placeholder plugin
+      script(src="../bower_components/jquery-placeholder/jquery.placeholder.js")
+      //retina plugin
+      script(src="../bower_components/retina.js/dist/retina.min.js")
+      //imagesLoaded plugin
+      script(src="../bower_components/imagesLoaded/imagesLoaded.pkgd.min.js")
+      //jquery lazyload plugin
+      script(src="../bower_components/jquery_lazyload/jquery.lazyload.js")
+    // /build 
+    +replaceTpl('markup')
+      block markupScripts
+        script(src="js/plugins/modernizr.min.js")
+        script(src="js/plugins/detectizr.min.js")
+        script(src="js/plugins/fastclick.min.js")
+        script(src="js/plugins/jquery.placeholder.min.js")
+        script(src="js/plugins/retina.min.js")
+        script(src="js/plugins/imagesLoaded.pkgd.min.js")
+        script(src="js/plugins/jquery.lazyload.js")
+    // build:remove:build 
+    //include plugins
+    block pluginsScripts 
+      script(src="js/jquery.form-validator.js")
+      script(src="js/jquery.show-error.js")
+      script(src="js/jquery.ajax-setup.js")
+      script(src="js/jquery.buy.js")
+      script(src="js/experiments.js")
+    //init plugins
+    block initScripts
+      script(src="js/jquery.utilities.js")
+      script(src="js/jquery.common.js")
+    // /build 
+    +replaceTpl('build')
+      script(src="js/wondrous-ink.min.js")
+    = "\n\r  "
